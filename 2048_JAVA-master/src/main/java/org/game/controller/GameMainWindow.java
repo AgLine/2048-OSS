@@ -37,9 +37,8 @@ public class GameMainWindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private int Score;
-	private int Score2;
 	private JLabel[][] matrixGame;
-	private JLabel[][] matrixGame2;
+
 	
 	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -47,7 +46,7 @@ public class GameMainWindow extends JFrame{
 		getContentPane().setLayout(null);
 	    setResizable(false);
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
-	    setSize(1100, 700);
+	    setSize(500, 700);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
 	     
 	    /*
@@ -60,12 +59,6 @@ public class GameMainWindow extends JFrame{
 		gameTitle.setBounds(20, 20, 150, 50);
 		add(gameTitle);
 		
-		JLabel gameTitle2 = new JLabel();
-		gameTitle2.setText("2048");
-		gameTitle2.setFont(new Font("", Font.BOLD,40));
-		gameTitle2.setForeground(Color.decode("#776e65"));
-		gameTitle2.setBounds(640, 20, 150, 50);
-		add(gameTitle2);
 		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
@@ -73,11 +66,7 @@ public class GameMainWindow extends JFrame{
 		gameSlogan.setBounds(20, 70, 320, 50);
 		add(gameSlogan);
 		
-		JLabel gameSlogan2 = new JLabel();
-		gameSlogan2.setText("Join the numbers and get to the 2048 tile!");
-		gameSlogan2.setFont(new Font("", Font.BOLD,15));
-		gameSlogan2.setBounds(640, 70, 320, 50);
-		add(gameSlogan2);
+
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
