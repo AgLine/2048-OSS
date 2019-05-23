@@ -47,7 +47,7 @@ public class GameMainWindow extends JFrame{
 		getContentPane().setLayout(null);
 	    setResizable(false);
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
-	    setSize(1100, 700);
+	    setSize(1125, 700);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
 	     
 	    /*
@@ -87,7 +87,7 @@ public class GameMainWindow extends JFrame{
 		currentScore.setBounds(200, 20, 130, 50);
 		currentScore.setEditable(false);
 		add(currentScore);
-		
+
 		final JTextField currentScore2 = new JTextField(" SCORE :0");
 		currentScore2.setOpaque(true); 
 		currentScore2.setBackground(Color.decode("#bbada0"));
@@ -124,6 +124,7 @@ public class GameMainWindow extends JFrame{
 		 * Panel
 		 */
 		JPanel mainPanel = new JPanel();
+		JPanel mainPanel2 = new JPanel();
 		
 		/*
 		 * Layout
@@ -131,8 +132,11 @@ public class GameMainWindow extends JFrame{
 		mainPanel.setBounds(20, 150, 460, 500);	
 		mainPanel.setLayout(null);			
 		
-		matrixGame = new JLabel[4][4];	
+		mainPanel2.setBounds(640, 150, 460, 500);	
+		mainPanel2.setLayout(null);
 		
+		matrixGame = new JLabel[4][4];	
+			
 		for(int i = 0; i < 4; i++){	//4*4 칸생성	
 			for(int j = 0; j < 4; j++){
 				matrixGame[i][j] = new JLabel();
@@ -143,8 +147,21 @@ public class GameMainWindow extends JFrame{
 				mainPanel.add(matrixGame[i][j]);							
 			}
 		}
+
+		matrixGame2 = new JLabel[4][4];	
 			
+		for(int i = 0; i < 4; i++){	//4*4 칸생성	
+			for(int j = 0; j < 4; j++){
+				matrixGame2[i][j] = new JLabel();
+				matrixGame2[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+				matrixGame2[i][j].setBounds(120 * j, 120 * i, 100, 100);
+				GameMatrix.setMatrix(matrixGame2, i, j, "");
+				matrixGame2[i][j].setOpaque(true);
+				mainPanel2.add(matrixGame2[i][j]);							
+			}
+		}
 		add(mainPanel);
+		add(mainPanel2);
 		
 		Score = 0;//처음점수 0점
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
@@ -170,26 +187,38 @@ public class GameMainWindow extends JFrame{
 				switch(code){
 				//Left
 				case KeyEvent.VK_LEFT:
+					Score += GameKeyEvent.do_Left(matrixGame2);
+					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					break;
 				case KeyEvent.VK_A:		    
-					Score += GameKeyEvent.do_Left(matrixGame);
+					Score += GameKeyEvent.do_a_Left(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Right
 				case KeyEvent.VK_RIGHT:
+					Score += GameKeyEvent.do_Right(matrixGame2);
+					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					break;
 				case KeyEvent.VK_D:
-					Score += GameKeyEvent.do_Right(matrixGame);
+					Score += GameKeyEvent.do_d_Right(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Up
 				case KeyEvent.VK_UP:
+					Score += GameKeyEvent.do_Up(matrixGame2);
+					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					break;
 				case KeyEvent.VK_W:
-					Score += GameKeyEvent.do_Up(matrixGame);
+					Score += GameKeyEvent.do_w_Up(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Down
 				case KeyEvent.VK_DOWN:
+					Score += GameKeyEvent.do_Down(matrixGame2);
+					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					break;
 				case KeyEvent.VK_S:
-					Score += GameKeyEvent.do_Down(matrixGame);
+					Score += GameKeyEvent.do_s_Down(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				}
@@ -204,7 +233,8 @@ public class GameMainWindow extends JFrame{
 			}
 		});
 		
-		this.addWindowListener(new WindowAdapter() {  //예외처리의 코드를 찾을수가 없음(모름)
+		
+		this.addWindowListener(new WindowAdapter() { 
             public void windowClosing(WindowEvent e)  
             {  
             	if(Score > GameScore.getScore().getScore()){
@@ -223,6 +253,9 @@ public class GameMainWindow extends JFrame{
 		 */
 		GameNewCell.CreateNew(matrixGame);
 		GameNewCell.CreateNew(matrixGame);
+		
+		GameNewCell.CreateNew(matrixGame2);
+		GameNewCell.CreateNew(matrixGame2);
 		
 	}
 	    

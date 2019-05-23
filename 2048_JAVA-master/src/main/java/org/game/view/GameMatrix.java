@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  *@author DONG Chuan
  *@version 1.0
  */
-public class GameMatrix {//블록 점수
+public class GameMatrix {
 	
 	public GameMatrix(){}
 	
