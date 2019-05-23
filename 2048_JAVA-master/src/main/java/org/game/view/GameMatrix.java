@@ -72,6 +72,10 @@ public class GameMatrix {//블록 점수
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
+			case "8192":
+				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setForeground(Color.white);
+				break;
 			default:
 				break;
 		}
