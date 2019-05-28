@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
+import javax.swing.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -111,7 +112,7 @@ public class GameMainWindow extends JFrame{
 		newGame.setFont(new Font("", Font.BOLD,15));
 		newGame.setBackground(Color.decode("#8f7a66"));
 		newGame.setForeground(Color.decode("#f9f6f2"));
-		newGame.setBounds(350, 80, 130, 30);
+		newGame.setBounds(500, 80, 130, 30);
 		add(newGame);
 	
 		JLabel copyRight = new JLabel();
@@ -178,6 +179,7 @@ public class GameMainWindow extends JFrame{
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
 		    	GameInit.startNewGame(matrixGame);
+		    	GameInit.startNewGame(matrixGame2);
 		    }
 		});
 		
