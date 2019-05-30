@@ -15,25 +15,42 @@ public class GameNewCell {
 							
 	static Random random = new Random();
 
-	public static void CreateNew(JLabel[][] matrixGame){//货肺款 喉废 积己
+	public static void CreateNew(JLabel[][] matrixGame,int tilenum){
 		
 		int i ,j;
 		boolean flag = false;
 		String str;
 		
 		while(!flag){
-			i = random.nextInt(4);// Random 0 ~ 3
-			j = random.nextInt(4);
-			
-			// Get the current text of cell
-			str = matrixGame[i][j].getText();
-			
-			// If this cell is still empty, we initialize it
-			if((str.compareTo("") == 0)){
+			switch(tilenum) {
+			case 1:
+				i = random.nextInt(3);// Random 0 ~ 3
+				j = random.nextInt(3);
+
+				// Get the current text of cell
+				str = matrixGame[i][j].getText();
+
+				// If this cell is still empty, we initialize it
+				if((str.compareTo("") == 0)){
+
+					// Create a new "2" cell
+					GameMatrix.setMatrix(matrixGame, i, j, "2");
+					flag = true;	
+				}
+			case 2:
+				i = random.nextInt(4);// Random 0 ~ 3
+				j = random.nextInt(4);
 				
-				// Create a new "2" cell
-				GameMatrix.setMatrix(matrixGame, i, j, "2");
-				flag = true;	
+				// Get the current text of cell
+				str = matrixGame[i][j].getText();
+				
+				// If this cell is still empty, we initialize it
+				if((str.compareTo("") == 0)){
+					
+					// Create a new "2" cell
+					GameMatrix.setMatrix(matrixGame, i, j, "2");
+					flag = true;	
+				}
 			}
 		}
 	}

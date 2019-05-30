@@ -77,7 +77,14 @@ public class Mainmenu extends JFrame {
 		panel.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a2) {
-					//2인용 화면 링크
+				try {
+					GameMainWindow join = new GameMainWindow(5);
+					join.setVisible(true);
+					dispose();
+			}catch(ParserConfigurationException | SAXException
+					| IOException a) {
+				a.printStackTrace();
+			}
 			}
 		});
 		

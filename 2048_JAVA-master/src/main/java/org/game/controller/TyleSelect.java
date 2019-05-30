@@ -56,37 +56,56 @@ public class TyleSelect extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnOnePlayer = new JButton("3   ×   3");
-		btnOnePlayer.setBounds(137, 257, 200, 41);
+		btnOnePlayer.setBounds(137, 250, 200, 41);
 		btnOnePlayer.setBackground(Color.WHITE);
 		panel.add(btnOnePlayer);
 		btnOnePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-						GameMainWindow join = new GameMainWindow();
-						join.setVisible(true);
-						dispose();
-				}catch(ParserConfigurationException | SAXException
-						| IOException a) {
-					a.printStackTrace();
-				}
+					GameMainWindow join = new GameMainWindow(1);
+					join.setVisible(true);
+					dispose();
+			}catch(ParserConfigurationException | SAXException
+					| IOException a) {
+				a.printStackTrace();
+			}
 				}}
 		);
+		
+		
 		JButton btnNewButton = new JButton("4   ×   4");
 		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(137, 335, 200, 41);
+		btnNewButton.setBounds(137, 300, 200, 41);
 		panel.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a2) {
-					//2인용 화면 링크
+				try {
+					GameMainWindow join = new GameMainWindow(2);
+					join.setVisible(true);
+					dispose();
+			}catch(ParserConfigurationException | SAXException
+					| IOException a) {
+				a.printStackTrace();
+			}
 			}
 		});
 		
 		JButton btnNewButton_1 = new JButton("5   ×   5");
-		btnNewButton_1.setBounds(137, 406, 200, 41);
+		btnNewButton_1.setBounds(137, 350, 200, 41);
 		btnNewButton_1.setBackground(Color.WHITE);
 		panel.add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a3) {
+				//5x5 
+		}
+	});
+		
+		JButton btnNewButton_2 = new JButton("6   ×   6");
+		btnNewButton_2.setBounds(137, 400, 200, 41);
+		btnNewButton_2.setBackground(Color.WHITE);
+		panel.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent a4) {
 				//5x5 
 		}
 	});

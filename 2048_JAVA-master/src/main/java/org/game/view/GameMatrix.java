@@ -13,18 +13,18 @@ import javax.swing.JLabel;
  *@author DONG Chuan
  *@version 1.0
  */
-public class GameMatrix {//블록 점수
+public class GameMatrix {		
 	
 	public GameMatrix(){}
 	
 	public static void setMatrix(JLabel[][] matrixGame, int i, int j, String str){
 		
-		matrixGame[i][j].setFont(new Font(str,Font.BOLD,50)); 
+		matrixGame[i][j].setFont(new Font(str,Font.BOLD,60)); 
 		matrixGame[i][j].setText(str);
 			
 		switch(str){
 			case "2":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#efe4fa"));
 				matrixGame[i][j].setForeground(Color.decode("#776e65"));
 				break;
 			case "4":
