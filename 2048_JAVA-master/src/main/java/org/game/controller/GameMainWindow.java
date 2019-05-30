@@ -77,15 +77,6 @@ public class GameMainWindow extends JFrame{
 		currentScore.setEditable(false);
 		add(currentScore);
 		
-		final JTextField currentScore2 = new JTextField(" SCORE :0");
-		currentScore2.setOpaque(true); 
-		currentScore2.setBackground(Color.decode("#bbada0"));
-		currentScore2.setForeground(Color.WHITE);
-		currentScore2.setFont(new Font("", Font.BOLD,15));
-		currentScore2.setBounds(820, 20, 130, 50);
-		currentScore2.setEditable(false);
-		add(currentScore2);
-		
 		final JLabel bestScore = new JLabel();//현재 사용가능한 아이템 갯수로 바꿈
 		bestScore.setText(" BEST :0");
 		bestScore.setOpaque(true); 
