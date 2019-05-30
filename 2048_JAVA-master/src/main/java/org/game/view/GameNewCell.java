@@ -36,6 +36,7 @@ public class GameNewCell {
 					GameMatrix.setMatrix(matrixGame, i, j, "2");
 					flag = true;	
 				}
+				break;
 			case 2:
 				i = random.nextInt(3);// Random 0 ~ 3
 				j = random.nextInt(3);
@@ -50,6 +51,7 @@ public class GameNewCell {
 					GameMatrix.setMatrix(matrixGame, i, j, "2");
 					flag = true;	
 				}
+				break;
 			case 3:
 				i = random.nextInt(5);// Random 0 ~ 4
 				j = random.nextInt(5);
@@ -64,6 +66,7 @@ public class GameNewCell {
 					GameMatrix.setMatrix(matrixGame, i, j, "2");
 					flag = true;	
 				}
+				break;
 			}
 		}
 	}

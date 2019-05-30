@@ -41,7 +41,7 @@ public class GameKeyEvent {
 				}
 			}
 			
-			
+			break;
 		case 2:
 			for(int i = 0; i < 4; i++){	
 				edgeLimit = 5;
@@ -64,6 +64,7 @@ public class GameKeyEvent {
 					}	
 				}
 			}
+			break;
 		case 3:
 			for(int i = 0; i < 5; i++){	
 				edgeLimit = 6;
@@ -86,6 +87,7 @@ public class GameKeyEvent {
 					}	
 				}
 			}
+			break;
 		}
 		
 		GameNewCell.CreateNew(matrixGame,tilenum);
@@ -121,6 +123,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		case 2:
 			for(int i = 0; i < 4; i ++){
 				edgeLimit = 5;
@@ -144,6 +147,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		case 3:
 			for(int i = 0; i < 5; i ++){
 				edgeLimit = 6;
@@ -167,6 +171,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		}
 		GameNewCell.CreateNew(matrixGame,tilenum);
 		return score;
@@ -201,6 +206,7 @@ public class GameKeyEvent {
 				}
 			}	
 			}
+		break;
 		case 2:
 			for(int j = 0; j < 4; j++){
 				edgeLimit = 5;
@@ -224,6 +230,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		case 3:
 			for(int j = 0; j < 5; j++){
 				edgeLimit = 6;
@@ -247,7 +254,9 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		}
+		
 		GameNewCell.CreateNew(matrixGame,tilenum);
 		return score;
 	}
@@ -307,6 +316,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		case 3:
 			for(int j = 0; j < 5; j ++){
 				edgeLimit = 6;
@@ -330,6 +340,7 @@ public class GameKeyEvent {
 					}
 				}
 			}
+			break;
 		
 	}
 		GameNewCell.CreateNew(matrixGame,tilenum);
