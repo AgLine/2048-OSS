@@ -11,7 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-import javax.swing.Timer;
+import java.util.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,6 +62,22 @@ public class GameMainWindow extends JFrame{
 		add(gameTitle);
 		
 		JLabel gameTitle2 = new JLabel();
+		gameTitle2.setText("2048");
+		gameTitle2.setFont(new Font("", Font.BOLD,40));
+		gameTitle2.setForeground(Color.decode("#776e65"));
+		gameTitle2.setBounds(640, 20, 150, 50);
+		add(gameTitle2);
+		
+		int first = 100,second = 100;
+		
+		JLabel firstTimer = new JLabel();
+		gameTitle2.setText("");
+		gameTitle2.setFont(new Font("", Font.BOLD,40));
+		gameTitle2.setForeground(Color.decode("#776e65"));
+		gameTitle2.setBounds(640, 20, 150, 50);
+		add(gameTitle2);
+		
+		JLabel secondTimer = new JLabel();
 		gameTitle2.setText("2048");
 		gameTitle2.setFont(new Font("", Font.BOLD,40));
 		gameTitle2.setForeground(Color.decode("#776e65"));
