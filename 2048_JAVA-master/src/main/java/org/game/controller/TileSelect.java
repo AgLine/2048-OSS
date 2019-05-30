@@ -18,7 +18,7 @@ import java.io.IOException;
 
 import javax.swing.JButton;
 
-public class TyleSelect extends JFrame {
+public class TileSelect extends JFrame {
 
 	private JPanel contentPane;
 
@@ -29,7 +29,7 @@ public class TyleSelect extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TyleSelect frame = new TyleSelect();
+					TileSelect frame = new TileSelect();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -41,7 +41,7 @@ public class TyleSelect extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TyleSelect() {
+	public TileSelect() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 700);
 		contentPane = new JPanel();
@@ -96,7 +96,14 @@ public class TyleSelect extends JFrame {
 		panel.add(btnNewButton_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a3) {
-				//5x5 
+				try {
+					GameMainWindow join = new GameMainWindow(3);
+					join.setVisible(true);
+					dispose();
+			}catch(ParserConfigurationException | SAXException
+					| IOException a) {
+				a.printStackTrace();
+			}
 		}
 	});
 		

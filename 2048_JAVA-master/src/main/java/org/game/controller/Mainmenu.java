@@ -65,7 +65,7 @@ public class Mainmenu extends JFrame {
 		panel.add(btnOnePlayer);
 		btnOnePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TyleSelect tyle = new TyleSelect();
+				TileSelect tyle = new TileSelect();
 				tyle.setVisible(true);
 				dispose();
 				}}

@@ -31,7 +31,7 @@ public class GameInit {
 			
 		}
 		
-		//Creat two random positions "2" elements for a new game
+		//Create two random positions "2" elements for a new game
 		GameNewCell.CreateNew(matrixGame,tilenum);
 		GameNewCell.CreateNew(matrixGame,tilenum);
 	}

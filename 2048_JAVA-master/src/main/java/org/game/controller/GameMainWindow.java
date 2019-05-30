@@ -143,7 +143,6 @@ public class GameMainWindow extends JFrame{
 		
 			switch (t) {
 			case 1:
-				System.out.println(t);
 				matrixGame = new JLabel[3][3];
 				for(i=0;i<3;i++)
 				{
@@ -159,13 +158,26 @@ public class GameMainWindow extends JFrame{
 				}
 				break;
 			case 2:
-				System.out.println(t);
 				matrixGame = new JLabel[4][4];	
 				for(i = 0; i < 4; i++){	//4*4 沫积己	
 					for(j = 0; j < 4; j++){
 						matrixGame[i][j] = new JLabel();
 						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
 						matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
+						GameMatrix.setMatrix(matrixGame, i, j, "");
+						matrixGame[i][j].setOpaque(true);
+						mainPanel.add(matrixGame[i][j]);							
+					}
+				}
+				break;
+			
+			case 3:
+				matrixGame = new JLabel[5][5];	
+				for(i = 0; i < 5; i++){	//4*4 沫积己	
+					for(j = 0; j < 5; j++){
+						matrixGame[i][j] = new JLabel();
+						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+						matrixGame[i][j].setBounds(96 * j, 96 * i, 76, 76);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
 						matrixGame[i][j].setOpaque(true);
 						mainPanel.add(matrixGame[i][j]);							
@@ -261,7 +273,7 @@ public class GameMainWindow extends JFrame{
         });  
 		
 		/*
-		 * Creat two random positions "2" elements for a new game
+		 * Create two random positions "2" elements for a new game
 		 */
 		GameNewCell.CreateNew(matrixGame,t);
 		GameNewCell.CreateNew(matrixGame,t);

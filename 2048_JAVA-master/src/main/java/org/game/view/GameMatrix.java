@@ -19,12 +19,12 @@ public class GameMatrix {
 	
 	public static void setMatrix(JLabel[][] matrixGame, int i, int j, String str){
 		
-		matrixGame[i][j].setFont(new Font(str,Font.BOLD,60)); 
+		matrixGame[i][j].setFont(new Font(str,Font.BOLD,50)); 
 		matrixGame[i][j].setText(str);
 			
 		switch(str){
 			case "2":
-				matrixGame[i][j].setBackground(Color.decode("#efe4fa"));
+				matrixGame[i][j].setBackground(Color.decode("#ede4fa"));
 				matrixGame[i][j].setForeground(Color.decode("#776e65"));
 				break;
 			case "4":
