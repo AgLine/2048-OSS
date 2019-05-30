@@ -71,18 +71,18 @@ public class GameMainWindow extends JFrame{
 		int first = 100,second = 100;
 		
 		JLabel firstTimer = new JLabel();
-		gameTitle2.setText("");
-		gameTitle2.setFont(new Font("", Font.BOLD,40));
-		gameTitle2.setForeground(Color.decode("#776e65"));
-		gameTitle2.setBounds(640, 20, 150, 50);
-		add(gameTitle2);
+		firstTimer.setText("dddd");
+		firstTimer.setFont(new Font("", Font.BOLD,40));
+		firstTimer.setForeground(Color.decode("#776e65"));
+		firstTimer.setBounds(350, 80, 150, 50);
+		add(firstTimer);
 		
 		JLabel secondTimer = new JLabel();
-		gameTitle2.setText("2048");
-		gameTitle2.setFont(new Font("", Font.BOLD,40));
-		gameTitle2.setForeground(Color.decode("#776e65"));
-		gameTitle2.setBounds(640, 20, 150, 50);
-		add(gameTitle2);
+		secondTimer.setText("2048");
+		secondTimer.setFont(new Font("", Font.BOLD,40));
+		secondTimer.setForeground(Color.decode("#776e65"));
+		secondTimer.setBounds(950, 80, 150, 50);
+		add(secondTimer);
 		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
