@@ -67,6 +67,21 @@ public class GameNewCell {
 					flag = true;	
 				}
 				break;
+			case 4:
+				i = random.nextInt(6);// Random 0 ~ 5
+				j = random.nextInt(6);
+
+				// Get the current text of cell
+				str = matrixGame[i][j].getText();
+				
+				// If this cell is still empty, we initialize it
+				if((str.compareTo("") == 0)){
+					
+					// Create a new "2" cell
+					GameMatrix.setMatrix(matrixGame, i, j, "2");
+					flag = true;	
+				}
+				break;
 			}
 		}
 	}

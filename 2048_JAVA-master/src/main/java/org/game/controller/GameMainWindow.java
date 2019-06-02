@@ -184,6 +184,21 @@ public class GameMainWindow extends JFrame{
 					}
 				}
 				break;
+				
+			case 4:
+				matrixGame = new JLabel[6][6];	
+				for(i = 0; i < 6; i++){	//4*4 칸생성	
+					for(j = 0; j < 6; j++){
+						matrixGame[i][j] = new JLabel();
+						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+						matrixGame[i][j].setBounds(80 * j, 80 * i, 60, 60);
+						GameMatrix.setMatrix(matrixGame, i, j, "");
+						matrixGame[i][j].setOpaque(true);
+						mainPanel.add(matrixGame[i][j]);							
+					}
+				}
+				break;
+				
 			case 5:matrixGame = new JLabel[4][4];	
 			
 			for(i = 0; i < 4; i++){	//2인용 코드 추가

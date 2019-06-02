@@ -113,7 +113,14 @@ public class TileSelect extends JFrame {
 		panel.add(btnNewButton_2);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a4) {
-				//5x5 
+					try {
+						GameMainWindow join = new GameMainWindow(4);
+						join.setVisible(true);
+						dispose();
+				}catch(ParserConfigurationException | SAXException
+						| IOException a) {
+					a.printStackTrace();
+				}
 		}
 	});
 	}
