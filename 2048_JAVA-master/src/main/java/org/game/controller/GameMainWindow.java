@@ -3,6 +3,8 @@ package org.game.controller;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -11,7 +13,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
-import java.util.Timer;
+import javax.swing.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -41,6 +43,7 @@ public class GameMainWindow extends JFrame{
 	private int Score2;
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
+	int i = 0, j = 0;
 	
 	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -68,22 +71,31 @@ public class GameMainWindow extends JFrame{
 		gameTitle2.setBounds(640, 20, 150, 50);
 		add(gameTitle2);
 		
-		int first = 100,second = 100;
-		
-		JLabel firstTimer = new JLabel();
-		firstTimer.setText("dddd");
+		final JLabel firstTimer = new JLabel();
+		firstTimer.setText(String.valueOf(100));
 		firstTimer.setFont(new Font("", Font.BOLD,40));
 		firstTimer.setForeground(Color.decode("#776e65"));
 		firstTimer.setBounds(350, 80, 150, 50);
 		add(firstTimer);
 		
-		JLabel secondTimer = new JLabel();
-		secondTimer.setText("2048");
+		final JLabel secondTimer = new JLabel();
+		secondTimer.setText(String.valueOf(100));
 		secondTimer.setFont(new Font("", Font.BOLD,40));
 		secondTimer.setForeground(Color.decode("#776e65"));
 		secondTimer.setBounds(950, 80, 150, 50);
 		add(secondTimer);
 		
+		Timer timer = new Timer(1000, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				firstTimer.setText(String.valueOf(100-i));
+				i++;
+				secondTimer.setText(String.valueOf(100-j));
+				j++;
+			}
+		});
+		timer.start();
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
 		gameSlogan.setFont(new Font("", Font.BOLD,15));
