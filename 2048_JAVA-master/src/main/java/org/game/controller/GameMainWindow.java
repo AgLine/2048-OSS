@@ -40,7 +40,6 @@ public class GameMainWindow extends JFrame{
 	private static final long serialVersionUID = 1L;
 	
 	private int Score;
-	private int Score2;
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
 	int i = 0, j = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
