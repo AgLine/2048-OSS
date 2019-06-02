@@ -43,7 +43,7 @@ public class GameMainWindow extends JFrame{
 	private int Score2;
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
-	int i = 0, j = 0;
+	int i = 0, j = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
 	
 	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -85,7 +85,7 @@ public class GameMainWindow extends JFrame{
 		secondTimer.setBounds(950, 80, 150, 50);
 		add(secondTimer);
 		
-		Timer timer = new Timer(1000, new ActionListener() {
+		final Timer timer = new Timer(1000, new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -95,7 +95,7 @@ public class GameMainWindow extends JFrame{
 				j++;
 			}
 		});
-		timer.start();
+		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
 		gameSlogan.setFont(new Font("", Font.BOLD,15));
@@ -214,6 +214,7 @@ public class GameMainWindow extends JFrame{
 		currentScore.addKeyListener(new KeyAdapter(){//키보드 입력값이랑 점수	
 			public void keyPressed(KeyEvent e){
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
+				timer.start();
 				switch(code){
 				//Left
 				case KeyEvent.VK_LEFT:
