@@ -10,7 +10,7 @@ import javax.swing.JLabel;
  *@author DONG Chuan
  *@version 1.0
  */
-public class GameKeyEvent {//Á¡¼ö
+public class GameKeyEvent {
 	
 	
 	public static int do_Left(JLabel[][] matrixGame){

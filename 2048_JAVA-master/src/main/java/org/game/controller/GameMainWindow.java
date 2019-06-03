@@ -26,6 +26,7 @@ import org.game.view.GameNewCell;
 import org.game.view.GameKeyEvent;
 import org.game.view.GameInit;
 import org.game.view.GameMatrix;
+import org.game.view.window;
 import org.xml.sax.SAXException;
 
 
@@ -38,7 +39,6 @@ public class GameMainWindow extends JFrame{
 	
 	private int Score;
 	private JLabel[][] matrixGame;
-
 	
 	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -59,14 +59,11 @@ public class GameMainWindow extends JFrame{
 		gameTitle.setBounds(20, 20, 150, 50);
 		add(gameTitle);
 		
-		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
 		gameSlogan.setFont(new Font("", Font.BOLD,15));
 		gameSlogan.setBounds(20, 70, 320, 50);
 		add(gameSlogan);
-		
-
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
@@ -77,16 +74,7 @@ public class GameMainWindow extends JFrame{
 		currentScore.setEditable(false);
 		add(currentScore);
 		
-		final JTextField currentScore2 = new JTextField(" SCORE :0");
-		currentScore2.setOpaque(true); 
-		currentScore2.setBackground(Color.decode("#bbada0"));
-		currentScore2.setForeground(Color.WHITE);
-		currentScore2.setFont(new Font("", Font.BOLD,15));
-		currentScore2.setBounds(820, 20, 130, 50);
-		currentScore2.setEditable(false);
-		add(currentScore2);
-		
-		final JLabel bestScore = new JLabel();//현재 사용가능한 아이템 갯수로 바꿈
+		final JLabel bestScore = new JLabel();
 		bestScore.setText(" BEST :0");
 		bestScore.setOpaque(true); 
 		bestScore.setBackground(Color.decode("#bbada0"));
@@ -122,7 +110,7 @@ public class GameMainWindow extends JFrame{
 		
 		matrixGame = new JLabel[4][4];	
 		
-		for(int i = 0; i < 4; i++){	//4*4 칸생성	
+		for(int i = 0; i < 4; i++){			
 			for(int j = 0; j < 4; j++){
 				matrixGame[i][j] = new JLabel();
 				matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,14 +123,14 @@ public class GameMainWindow extends JFrame{
 			
 		add(mainPanel);
 		
-		Score = 0;//처음점수 0점
+		Score = 0;
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
 		
 		/*
 		 * Get the best score from the xml file
 		 */
 
-		GameScore.setScore(GameScore.getScoreXML());//새로운게임 다시시작
+		GameScore.setScore(GameScore.getScoreXML());
 		
 		newGame.addMouseListener(new MouseAdapter()
 		{
@@ -153,7 +141,7 @@ public class GameMainWindow extends JFrame{
 		    }
 		});
 		
-		currentScore.addKeyListener(new KeyAdapter(){//키보드 입력값이랑 점수	
+		currentScore.addKeyListener(new KeyAdapter(){				
 			public void keyPressed(KeyEvent e){
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
 				switch(code){
@@ -162,24 +150,28 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_A:		    
 					Score += GameKeyEvent.do_Left(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
+					window.over(matrixGame);
 					break;
 				//Right
 				case KeyEvent.VK_RIGHT:
 				case KeyEvent.VK_D:
 					Score += GameKeyEvent.do_Right(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
+					window.over(matrixGame);
 					break;
 				//Up
 				case KeyEvent.VK_UP:
 				case KeyEvent.VK_W:
 					Score += GameKeyEvent.do_Up(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
+					window.over(matrixGame);
 					break;
 				//Down
 				case KeyEvent.VK_DOWN:
 				case KeyEvent.VK_S:
 					Score += GameKeyEvent.do_Down(matrixGame);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
+					window.over(matrixGame);
 					break;
 				}
 				
@@ -193,7 +185,7 @@ public class GameMainWindow extends JFrame{
 			}
 		});
 		
-		this.addWindowListener(new WindowAdapter() {  //예외처리의 코드를 찾을수가 없음(모름)
+		this.addWindowListener(new WindowAdapter() {  
             public void windowClosing(WindowEvent e)  
             {  
             	if(Score > GameScore.getScore().getScore()){

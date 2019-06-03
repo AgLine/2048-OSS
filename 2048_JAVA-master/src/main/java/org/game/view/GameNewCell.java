@@ -15,7 +15,7 @@ public class GameNewCell {
 							
 	static Random random = new Random();
 
-	public static void CreateNew(JLabel[][] matrixGame){//货肺款 喉废 积己
+	public static void CreateNew(JLabel[][] matrixGame){
 		
 		int i ,j;
 		boolean flag = false;
