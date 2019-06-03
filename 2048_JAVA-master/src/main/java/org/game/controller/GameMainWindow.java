@@ -44,7 +44,6 @@ public class GameMainWindow extends JFrame{
 	public GameMainWindow(int tilenum) throws ParserConfigurationException, SAXException, IOException{
 		super();
 		this.t = tilenum; 
-		System.out.println(t);
 		setTitle("Game Java 2048");
 		getContentPane().setLayout(null);
 	    setResizable(false);
@@ -55,7 +54,7 @@ public class GameMainWindow extends JFrame{
 	    }
 	    else
 	    {
-	    	setSize(500,700);
+	    	setSize(516,700);
 	    }
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
 	    /*
