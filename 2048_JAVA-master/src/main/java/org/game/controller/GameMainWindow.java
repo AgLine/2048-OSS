@@ -58,7 +58,6 @@ public class GameMainWindow extends JFrame{
 	    	setSize(500,700);
 	    }
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
-	     
 	    /*
 		 * Components
 		 */

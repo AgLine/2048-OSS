@@ -123,6 +123,19 @@ public class TileSelect extends JFrame {
 				}
 		}
 	});
+		
+		JButton backbutton=new JButton("back");
+		backbutton.setBounds(430, 550, 30, 20);
+		backbutton.setBackground(Color.cyan);
+		panel.add(backbutton);
+		backbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Mainmenu mainmenu=new Mainmenu();
+				mainmenu.setVisible(true);
+				dispose();
+			}
+		
+		});
+		
 	}
-
 }
