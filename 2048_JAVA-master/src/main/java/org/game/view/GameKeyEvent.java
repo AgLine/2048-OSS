@@ -12,37 +12,7 @@ import javax.swing.JLabel;
  */
 public class GameKeyEvent {
 	
-<<<<<<< HEAD
-	public static int do_Left(JLabel[][] matrixGame,int itemnum){
-		
-		int num, score = 0, edgeLimit = 0;
-		String str, strNeighbour;
-		
-		for(int i = 0; i < 4; i++){	
-			edgeLimit = 5;
-			for(int k = 0; k < 3; k++){
-				for(int j = 1; j < 4; j++){					
-					str = matrixGame[i][j].getText();			
-					strNeighbour = matrixGame[i][j-1].getText();			
-					
-					if(strNeighbour.compareTo("") == 0){
-						GameMatrix.setMatrix(matrixGame, i, j-1, str);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-					}else if((str.compareTo(strNeighbour) == 0) && (j !=edgeLimit) && (j != edgeLimit-1)){			
-						num  = Integer.parseInt(str);
-						score += num;
-						str = String.valueOf(2 * num);
-						if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-							GameMatrix.setMatrix(matrixGame, i+1, j, "");
-						}
-						GameMatrix.setMatrix(matrixGame, i, j-1, str);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						edgeLimit = j;
-					}
-				}	
-=======
-	
-	public static int do_Left(JLabel[][] matrixGame,int tilenum){
+	public static int do_Left(JLabel[][] matrixGame, int tilenum, int itemnum){
 		
 		int num, score = 0, edgeLimit = 0;
 		String str, strNeighbour;
@@ -68,7 +38,7 @@ public class GameKeyEvent {
 						}
 					}	
 				}
->>>>>>> eseul
+
 			}
 			
 			break;
@@ -142,8 +112,7 @@ public class GameKeyEvent {
 			}
 			break;
 		}
-<<<<<<< HEAD
-		GameNewCell.CreateNew(matrixGame);
+		GameNewCell.CreateNew(matrixGame,tilenum);
 		if(itemnum == 0) {
 			GameNewItem.CreateNew(matrixGame);
 		}
