@@ -13,6 +13,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 
+import java.util.Random;
+
 import javax.swing.Timer;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -26,6 +28,7 @@ import javax.xml.transform.TransformerException;
 import org.game.model.BestScore;
 import org.game.view.GameScore;
 import org.game.view.GameNewCell;
+import org.game.view.GameNewItem;
 import org.game.view.GameKeyEvent;
 import org.game.view.GameInit;
 import org.game.view.GameMatrix;
@@ -43,6 +46,12 @@ public class GameMainWindow extends JFrame{
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
 	int i = 0, j = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
+	static Random random = new Random();
+	int firstItem = random.nextInt(10);
+	int secondItem = random.nextInt(10);
+	int firstItemCnt = 4, secondItemCnt = 4;
+	
+	
 	
 	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -210,45 +219,49 @@ public class GameMainWindow extends JFrame{
 		    }
 		});
 		
+		System.out.println(firstItem);
+		System.out.println(secondItem);
 		currentScore.addKeyListener(new KeyAdapter(){//키보드 입력값이랑 점수	
 			public void keyPressed(KeyEvent e){
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
 				timer.start();
+				System.out.println(firstItem);
+				System.out.println(secondItem);
 				switch(code){
 				//Left
 				case KeyEvent.VK_LEFT:
-					Score += GameKeyEvent.do_Left(matrixGame2);
+					Score += GameKeyEvent.do_Left(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
-				case KeyEvent.VK_A:		    
-					Score += GameKeyEvent.do_a_Left(matrixGame);
+				case KeyEvent.VK_A:	
+					Score += GameKeyEvent.do_a_Left(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Right
 				case KeyEvent.VK_RIGHT:
-					Score += GameKeyEvent.do_Right(matrixGame2);
+					Score += GameKeyEvent.do_Right(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_D:
-					Score += GameKeyEvent.do_d_Right(matrixGame);
+					Score += GameKeyEvent.do_d_Right(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Up
 				case KeyEvent.VK_UP:
-					Score += GameKeyEvent.do_Up(matrixGame2);
+					Score += GameKeyEvent.do_Up(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_W:
-					Score += GameKeyEvent.do_w_Up(matrixGame);
+					Score += GameKeyEvent.do_w_Up(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				//Down
 				case KeyEvent.VK_DOWN:
-					Score += GameKeyEvent.do_Down(matrixGame2);
+					Score += GameKeyEvent.do_Down(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_S:
-					Score += GameKeyEvent.do_s_Down(matrixGame);
+					Score += GameKeyEvent.do_s_Down(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				}
@@ -259,6 +272,14 @@ public class GameMainWindow extends JFrame{
 				*/
 				if(Score > GameScore.getScore().getScore()){
 					bestScore.setText(" BEST : " + String.valueOf(Score));
+				}
+				if(firstItem == 0 && firstItemCnt >= 0) {
+					firstItem = random.nextInt(10);
+					firstItemCnt--;
+				}
+				if(secondItem == 0 && secondItemCnt >= 0) {
+					secondItem = random.nextInt(10);
+					secondItemCnt--;
 				}
 			}
 		});
@@ -286,6 +307,7 @@ public class GameMainWindow extends JFrame{
 		
 		GameNewCell.CreateNew(matrixGame2);
 		GameNewCell.CreateNew(matrixGame2);
+		
 		
 	}
 	    
