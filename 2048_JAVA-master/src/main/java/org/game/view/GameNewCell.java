@@ -15,8 +15,14 @@ public class GameNewCell {
 							
 	static Random random = new Random();
 
+<<<<<<< HEAD
 	public static void CreateNew(JLabel[][] matrixGame,int tilenum){
 		int i,j;
+=======
+	public static void CreateNew(JLabel[][] matrixGame){
+		
+		int i ,j;
+>>>>>>> sun060
 		boolean flag = false;
 		String str;
 		

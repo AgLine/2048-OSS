@@ -14,10 +14,14 @@ import javax.swing.JLabel;
  *@version 1.0
  */
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class GameMatrix {
 =======
 public class GameMatrix {		
 >>>>>>> eseul
+=======
+public class GameMatrix {		
+>>>>>>> sun060
 	
 	public GameMatrix(){}
 	
@@ -71,11 +75,11 @@ public class GameMatrix {
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
-			case "":
 			case "4096":
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
+<<<<<<< HEAD
 			case "10":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
 				matrixGame[i][j].setForeground(Color.white);
@@ -86,6 +90,10 @@ public class GameMatrix {
 				break;
 			case "12":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
+=======
+			case "8192":
+				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+>>>>>>> sun060
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			default:
