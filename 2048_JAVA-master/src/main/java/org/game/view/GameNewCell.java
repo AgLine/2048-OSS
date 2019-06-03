@@ -30,6 +30,7 @@ public class GameNewCell {
 					flag = true;	
 				}
 				break;
+			case 5:
 			case 2:
 				i = random.nextInt(4);
 				j = random.nextInt(4);

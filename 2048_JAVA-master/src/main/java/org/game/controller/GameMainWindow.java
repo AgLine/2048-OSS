@@ -275,22 +275,19 @@ public class GameMainWindow extends JFrame{
 		add(mainPanel2);
 		
 		Score = 0;
-		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
+		//bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
 		
 		/*
 		 * Get the best score from the xml file
 		 */
 
-		GameScore.setScore(GameScore.getScoreXML());
+		//GameScore.setScore(GameScore.getScoreXML());
 		
 		newGame.addMouseListener(new MouseAdapter()
 		{
 		    @Override
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
-		    	GameInit.startNewGame(matrixGame);
-		    	GameInit.startNewGame(matrixGame2);
-
 		    	GameInit.startNewGame(matrixGame,t);
 		    }
 		});
@@ -316,39 +313,29 @@ public class GameMainWindow extends JFrame{
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_RIGHT:
-					Score += GameKeyEvent.do_Right(matrixGame2,--secondItem);
+					Score += GameKeyEvent.do_Right(matrixGame2,t,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_D:
-					Score += GameKeyEvent.do_d_Right(matrixGame,--firstItem);
-					Score += GameKeyEvent.do_Right(matrixGame,t);
+					Score += GameKeyEvent.do_d_Right(matrixGame,t,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_UP:
-					Score += GameKeyEvent.do_Up(matrixGame2,--secondItem);
+					Score += GameKeyEvent.do_Up(matrixGame2,t,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_W:
-<<<<<<< HEAD
-					Score += GameKeyEvent.do_w_Up(matrixGame,--firstItem);
-=======
-					Score += GameKeyEvent.do_Up(matrixGame,t);
->>>>>>> eseul
+					Score += GameKeyEvent.do_w_Up(matrixGame,t,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
-				//Down
 				case KeyEvent.VK_DOWN:
-					Score += GameKeyEvent.do_Down(matrixGame2,--secondItem);
+					Score += GameKeyEvent.do_Down(matrixGame2,t,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_S:
-<<<<<<< HEAD
-					Score += GameKeyEvent.do_s_Down(matrixGame,--firstItem);
-=======
-					Score += GameKeyEvent.do_Down(matrixGame,t);
->>>>>>> eseul
+					Score += GameKeyEvent.do_s_Down(matrixGame,t,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
@@ -392,8 +379,8 @@ public class GameMainWindow extends JFrame{
 		GameNewCell.CreateNew(matrixGame,t);
 		GameNewCell.CreateNew(matrixGame,t);
 		
-		GameNewCell.CreateNew(matrixGame2);
-		GameNewCell.CreateNew(matrixGame2);
+		GameNewCell.CreateNew(matrixGame2,t);
+		GameNewCell.CreateNew(matrixGame2,t);
 		
 		
 	}
