@@ -81,7 +81,7 @@ public class GameMatrix {
 				break;
 			case "12":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
-
+				break;
 			case "8192":
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
 				matrixGame[i][j].setForeground(Color.white);

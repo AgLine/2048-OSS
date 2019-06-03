@@ -55,6 +55,8 @@ public class GameMainWindow extends JFrame{
 	
 	
 	int i,j,t;
+
+	protected Timer timer;
 	
 	public GameMainWindow(int tilenum) throws ParserConfigurationException, SAXException, IOException{
 		super();
@@ -68,6 +70,30 @@ public class GameMainWindow extends JFrame{
 	    if(tilenum==5)
 	    {
 	    	setSize(1100,700);
+	    	final JLabel firstTimer = new JLabel();
+			firstTimer.setText(String.valueOf(100));
+			firstTimer.setFont(new Font("", Font.BOLD,40));
+			firstTimer.setForeground(Color.decode("#776e65"));
+			firstTimer.setBounds(350, 80, 150, 50);
+			add(firstTimer);
+			
+			final JLabel secondTimer = new JLabel();
+			secondTimer.setText(String.valueOf(100));
+			secondTimer.setFont(new Font("", Font.BOLD,40));
+			secondTimer.setForeground(Color.decode("#776e65"));
+			secondTimer.setBounds(950, 80, 150, 50);
+			add(secondTimer);
+			
+			timer = new Timer(1000, new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					firstTimer.setText(String.valueOf(100-is));
+					is++;
+					secondTimer.setText(String.valueOf(100-js));
+					js++;
+				}
+			});
 	    }
 	    else
 	    {
@@ -83,31 +109,6 @@ public class GameMainWindow extends JFrame{
 		gameTitle.setForeground(Color.decode("#776e65"));
 		gameTitle.setBounds(20, 20, 150, 50);
 		add(gameTitle);
-		
-		final JLabel firstTimer = new JLabel();
-		firstTimer.setText(String.valueOf(100));
-		firstTimer.setFont(new Font("", Font.BOLD,40));
-		firstTimer.setForeground(Color.decode("#776e65"));
-		firstTimer.setBounds(350, 80, 150, 50);
-		add(firstTimer);
-		
-		final JLabel secondTimer = new JLabel();
-		secondTimer.setText(String.valueOf(100));
-		secondTimer.setFont(new Font("", Font.BOLD,40));
-		secondTimer.setForeground(Color.decode("#776e65"));
-		secondTimer.setBounds(950, 80, 150, 50);
-		add(secondTimer);
-		
-		final Timer timer = new Timer(1000, new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				firstTimer.setText(String.valueOf(100-i));
-				i++;
-				secondTimer.setText(String.valueOf(100-j));
-				j++;
-			}
-		});
 		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
@@ -275,13 +276,13 @@ public class GameMainWindow extends JFrame{
 		add(mainPanel2);
 		
 		Score = 0;
-		//bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
+		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
 		
 		/*
 		 * Get the best score from the xml file
 		 */
 
-		//GameScore.setScore(GameScore.getScoreXML());
+		GameScore.setScore(GameScore.getScoreXML());
 		
 		newGame.addMouseListener(new MouseAdapter()
 		{
@@ -298,7 +299,9 @@ public class GameMainWindow extends JFrame{
 		currentScore.addKeyListener(new KeyAdapter(){				
 			public void keyPressed(KeyEvent e){
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
-				timer.start();
+				if(t == 5) {
+					timer.start();
+				}
 				System.out.println(firstItem);
 				System.out.println(secondItem);
 				switch(code){
