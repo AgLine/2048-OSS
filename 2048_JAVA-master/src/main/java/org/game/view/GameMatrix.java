@@ -13,7 +13,11 @@ import javax.swing.JLabel;
  *@author DONG Chuan
  *@version 1.0
  */
+<<<<<<< HEAD
 public class GameMatrix {
+=======
+public class GameMatrix {		
+>>>>>>> eseul
 	
 	public GameMatrix(){}
 	
@@ -24,7 +28,7 @@ public class GameMatrix {
 			
 		switch(str){
 			case "2":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#ede4fa"));
 				matrixGame[i][j].setForeground(Color.decode("#776e65"));
 				break;
 			case "4":

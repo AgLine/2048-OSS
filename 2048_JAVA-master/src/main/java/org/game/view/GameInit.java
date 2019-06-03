@@ -11,16 +11,28 @@ import javax.swing.JLabel;
  */
 public class GameInit {
 	
-	public static void startNewGame(JLabel[][] matrixGame){
+	public static void startNewGame(JLabel[][] matrixGame,int tilenum){
 		
-		for(int i=0; i<4 ;i++){
-			for(int j=0; j<4; j++){
-				GameMatrix.setMatrix(matrixGame, i, j, "");
+		switch (tilenum)
+		{
+		case 1:
+			for(int i=0; i<3 ;i++){
+				for(int j=0; j<3; j++){
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+				}
 			}
+		
+		case 2:
+			for(int i=0; i<4 ;i++){
+				for(int j=0; j<4; j++){
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+				}
+			}
+			
 		}
 		
-		//Creat two random positions "2" elements for a new game
-		GameNewCell.CreateNew(matrixGame);
-		GameNewCell.CreateNew(matrixGame);
+		//Create two random positions "2" elements for a new game
+		GameNewCell.CreateNew(matrixGame,tilenum);
+		GameNewCell.CreateNew(matrixGame,tilenum);
 	}
 }
