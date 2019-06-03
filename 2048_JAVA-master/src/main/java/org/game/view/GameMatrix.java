@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  *@author DONG Chuan
  *@version 1.0
  */
-public class GameMatrix {//블록 점수
+public class GameMatrix {
 	
 	public GameMatrix(){}
 	
@@ -70,6 +70,18 @@ public class GameMatrix {//블록 점수
 			case "":
 			case "4096":
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setForeground(Color.white);
+				break;
+			case "10":
+				matrixGame[i][j].setBackground(Color.decode("#554813"));
+				matrixGame[i][j].setForeground(Color.white);
+				break;
+			case "11":
+				matrixGame[i][j].setBackground(Color.decode("#554813"));
+				matrixGame[i][j].setForeground(Color.white);
+				break;
+			case "12":
+				matrixGame[i][j].setBackground(Color.decode("#554813"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			default:
