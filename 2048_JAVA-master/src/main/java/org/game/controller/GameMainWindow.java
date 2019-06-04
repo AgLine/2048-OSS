@@ -32,9 +32,7 @@ import org.game.view.GameNewItem;
 import org.game.view.GameKeyEvent;
 import org.game.view.GameInit;
 import org.game.view.GameMatrix;
-import org.game.view.window;
 import org.xml.sax.SAXException;
-
 
 
 public class GameMainWindow extends JFrame{
@@ -47,74 +45,76 @@ public class GameMainWindow extends JFrame{
 	private int Score;
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
-	int is = 0, js = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
+	int i = 0, j = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
 	static Random random = new Random();
 	int firstItem = random.nextInt(10);
 	int secondItem = random.nextInt(10);
 	int firstItemCnt = 4, secondItemCnt = 4;
 	
 	
-	int i,j,t;
-
-	protected Timer timer;
 	
-	public GameMainWindow(int tilenum) throws ParserConfigurationException, SAXException, IOException{
+	public GameMainWindow() throws ParserConfigurationException, SAXException, IOException{
 		super();
-		this.t = tilenum; 
-		System.out.println(t);
 		setTitle("Game Java 2048");
 		getContentPane().setLayout(null);
 	    setResizable(false);
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
-
-	    if(tilenum==5)
-	    {
-	    	setSize(1100,700);
-	    	final JLabel firstTimer = new JLabel();
-			firstTimer.setText(String.valueOf(100));
-			firstTimer.setFont(new Font("", Font.BOLD,40));
-			firstTimer.setForeground(Color.decode("#776e65"));
-			firstTimer.setBounds(350, 80, 150, 50);
-			add(firstTimer);
-			
-			final JLabel secondTimer = new JLabel();
-			secondTimer.setText(String.valueOf(100));
-			secondTimer.setFont(new Font("", Font.BOLD,40));
-			secondTimer.setForeground(Color.decode("#776e65"));
-			secondTimer.setBounds(950, 80, 150, 50);
-			add(secondTimer);
-			
-			timer = new Timer(1000, new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					firstTimer.setText(String.valueOf(100-is));
-					is++;
-					secondTimer.setText(String.valueOf(100-js));
-					js++;
-				}
-			});
-	    }
-	    else
-	    {
-	    	setSize(500,700);
-	    }
+	    setSize(1125, 700);
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
+	     
 	    /*
 		 * Components
 		 */
 		JLabel gameTitle = new JLabel();
 		gameTitle.setText("2048");
-		gameTitle.setFont(new Font("", Font.BOLD,50));
+		gameTitle.setFont(new Font("", Font.BOLD,40));
 		gameTitle.setForeground(Color.decode("#776e65"));
 		gameTitle.setBounds(20, 20, 150, 50);
 		add(gameTitle);
+		
+		JLabel gameTitle2 = new JLabel();
+		gameTitle2.setText("2048");
+		gameTitle2.setFont(new Font("", Font.BOLD,40));
+		gameTitle2.setForeground(Color.decode("#776e65"));
+		gameTitle2.setBounds(640, 20, 150, 50);
+		add(gameTitle2);
+		
+		final JLabel firstTimer = new JLabel();
+		firstTimer.setText(String.valueOf(100));
+		firstTimer.setFont(new Font("", Font.BOLD,40));
+		firstTimer.setForeground(Color.decode("#776e65"));
+		firstTimer.setBounds(350, 80, 150, 50);
+		add(firstTimer);
+		
+		final JLabel secondTimer = new JLabel();
+		secondTimer.setText(String.valueOf(100));
+		secondTimer.setFont(new Font("", Font.BOLD,40));
+		secondTimer.setForeground(Color.decode("#776e65"));
+		secondTimer.setBounds(950, 80, 150, 50);
+		add(secondTimer);
+		
+		final Timer timer = new Timer(1000, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				firstTimer.setText(String.valueOf(100-i));
+				i++;
+				secondTimer.setText(String.valueOf(100-j));
+				j++;
+			}
+		});
 		
 		JLabel gameSlogan = new JLabel();
 		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
 		gameSlogan.setFont(new Font("", Font.BOLD,15));
 		gameSlogan.setBounds(20, 70, 320, 50);
 		add(gameSlogan);
+		
+		JLabel gameSlogan2 = new JLabel();
+		gameSlogan2.setText("Join the numbers and get to the 2048 tile!");
+		gameSlogan2.setFont(new Font("", Font.BOLD,15));
+		gameSlogan2.setBounds(640, 70, 320, 50);
+		add(gameSlogan2);
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
@@ -133,10 +133,8 @@ public class GameMainWindow extends JFrame{
 		currentScore2.setBounds(820, 20, 130, 50);
 		currentScore2.setEditable(false);
 		add(currentScore2);
-
 		
-		final JLabel bestScore = new JLabel();
-
+		final JLabel bestScore = new JLabel();//현재 사용가능한 아이템 갯수로 바꿈
 		bestScore.setText(" BEST :0");
 		bestScore.setOpaque(true); 
 		bestScore.setBackground(Color.decode("#bbada0"));
@@ -176,7 +174,7 @@ public class GameMainWindow extends JFrame{
 		
 		matrixGame = new JLabel[4][4];	
 			
-		for(int i = 0; i < 4; i++){	//4*4 칸생성		
+		for(int i = 0; i < 4; i++){	//4*4 칸생성	
 			for(int j = 0; j < 4; j++){
 				matrixGame[i][j] = new JLabel();
 				matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
@@ -199,148 +197,72 @@ public class GameMainWindow extends JFrame{
 				mainPanel2.add(matrixGame2[i][j]);							
 			}
 		}
-		
-			switch (t) {
-			case 1:
-				matrixGame = new JLabel[3][3];
-				for(i=0;i<3;i++)
-				{
-					for (j=0;j<3;j++)
-					{
-						matrixGame[i][j]=new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(160*j, 160*i, 140, 140);
-						GameMatrix.setMatrix(matrixGame, i,	j,"");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);
-					}
-				}
-				break;
-			case 2:
-				matrixGame = new JLabel[4][4];	
-				for(i = 0; i < 4; i++){	//4*4 칸생성	
-					for(j = 0; j < 4; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-			
-			case 3:
-				matrixGame = new JLabel[5][5];	
-				for(i = 0; i < 5; i++){	//4*4 칸생성	
-					for(j = 0; j < 5; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(96 * j, 96 * i, 76, 76);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-				
-			case 4:
-				matrixGame = new JLabel[6][6];	
-				for(i = 0; i < 6; i++){	//4*4 칸생성	
-					for(j = 0; j < 6; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(80 * j, 80 * i, 60, 60);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-				
-			case 5:matrixGame = new JLabel[4][4];	
-			
-			for(i = 0; i < 4; i++){	//2인용 코드 추가
-				for(j = 0; j < 4; j++){
-					matrixGame[i][j] = new JLabel();
-					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-					matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
-					GameMatrix.setMatrix(matrixGame, i, j, "");
-					matrixGame[i][j].setOpaque(true);
-					mainPanel.add(matrixGame[i][j]);							
-				}
-			}
-			break;
-			}
 		add(mainPanel);
 		add(mainPanel2);
 		
-		Score = 0;
+		Score = 0;//처음점수 0점
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
 		
 		/*
 		 * Get the best score from the xml file
 		 */
 
-		GameScore.setScore(GameScore.getScoreXML());
+		GameScore.setScore(GameScore.getScoreXML());//새로운게임 다시시작
 		
 		newGame.addMouseListener(new MouseAdapter()
 		{
 		    @Override
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
-		    	GameInit.startNewGame(matrixGame,t);
+		    	GameInit.startNewGame(matrixGame);
+		    	GameInit.startNewGame(matrixGame2);
 		    }
 		});
-
-		//System.out.println(firstItem);
-		//System.out.println(secondItem);	
 		
-		currentScore.addKeyListener(new KeyAdapter(){				
+		System.out.println(firstItem);
+		System.out.println(secondItem);
+		currentScore.addKeyListener(new KeyAdapter(){//키보드 입력값이랑 점수	
 			public void keyPressed(KeyEvent e){
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
-				if(t == 5) {
-					timer.start();
-				}
-				//System.out.println(firstItem);
-				//System.out.println(secondItem);
+				timer.start();
+				System.out.println(firstItem);
+				System.out.println(secondItem);
 				switch(code){
+				//Left
 				case KeyEvent.VK_LEFT:
-					Score += GameKeyEvent.do_Left(matrixGame2,t,--secondItem);
+					Score += GameKeyEvent.do_Left(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
 					break;
-				case KeyEvent.VK_A:		    
-					Score += GameKeyEvent.do_a_Left(matrixGame,t,--firstItem);
+				case KeyEvent.VK_A:	
+					Score += GameKeyEvent.do_a_Left(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
 					break;
+				//Right
 				case KeyEvent.VK_RIGHT:
-					Score += GameKeyEvent.do_Right(matrixGame2,t,--secondItem);
+					Score += GameKeyEvent.do_Right(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_D:
-					Score += GameKeyEvent.do_d_Right(matrixGame,t,--firstItem);
+					Score += GameKeyEvent.do_d_Right(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
 					break;
+				//Up
 				case KeyEvent.VK_UP:
-					Score += GameKeyEvent.do_Up(matrixGame2,t,--secondItem);
+					Score += GameKeyEvent.do_Up(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_W:
-					Score += GameKeyEvent.do_w_Up(matrixGame,t,--firstItem);
+					Score += GameKeyEvent.do_w_Up(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
 					break;
+				//Down
 				case KeyEvent.VK_DOWN:
-					Score += GameKeyEvent.do_Down(matrixGame2,t,--secondItem);
+					Score += GameKeyEvent.do_Down(matrixGame2,--secondItem);
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_S:
-					Score += GameKeyEvent.do_s_Down(matrixGame,t,--firstItem);
+					Score += GameKeyEvent.do_s_Down(matrixGame,--firstItem);
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
 					break;
 				}
 				
@@ -362,7 +284,8 @@ public class GameMainWindow extends JFrame{
 			}
 		});
 		
-		this.addWindowListener(new WindowAdapter() {  
+		
+		this.addWindowListener(new WindowAdapter() { 
             public void windowClosing(WindowEvent e)  
             {  
             	if(Score > GameScore.getScore().getScore()){
@@ -377,14 +300,32 @@ public class GameMainWindow extends JFrame{
         });  
 		
 		/*
-		 * Create two random positions "2" elements for a new game
+		 * Creat two random positions "2" elements for a new game
 		 */
-		GameNewCell.CreateNew(matrixGame,t);
-		GameNewCell.CreateNew(matrixGame,t);
+		GameNewCell.CreateNew(matrixGame);
+		GameNewCell.CreateNew(matrixGame);
 		
-		GameNewCell.CreateNew(matrixGame2,t);
-		GameNewCell.CreateNew(matrixGame2,t);
+		GameNewCell.CreateNew(matrixGame2);
+		GameNewCell.CreateNew(matrixGame2);
 		
 		
 	}
+	    
+	public static void main(String[] args) {
+
+		EventQueue.invokeLater(new Runnable() {
+			@Override
+		    public void run() {
+				GameMainWindow ex = null;
+				try {
+					ex = new GameMainWindow();
+				} catch (ParserConfigurationException | SAXException
+						| IOException e) {
+					e.printStackTrace();
+				}
+				ex.setVisible(true);
+		    }
+		});
+	}
+	
 }

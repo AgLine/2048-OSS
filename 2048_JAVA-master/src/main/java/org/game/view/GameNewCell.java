@@ -15,51 +15,26 @@ public class GameNewCell {
 							
 	static Random random = new Random();
 
-	public static void CreateNew(JLabel[][] matrixGame,int tilenum){
-		int i,j;
+	public static void CreateNew(JLabel[][] matrixGame){//货肺款 喉废 积己
+		
+		int i ,j;
 		boolean flag = false;
 		String str;
+		
 		while(!flag){
-			switch(tilenum) {
-			case 1:
-				i = random.nextInt(3);
-				j = random.nextInt(3);
-				str = matrixGame[i][j].getText();
-				if((str.compareTo("") == 0)){
-					GameMatrix.setMatrix(matrixGame, i, j, "2");
-					flag = true;	
-				}
-				break;
-			case 5:
-			case 2:
-				i = random.nextInt(4);
-				j = random.nextInt(4);
-				str = matrixGame[i][j].getText();
-				if((str.compareTo("") == 0)){
-					GameMatrix.setMatrix(matrixGame, i, j, "2");
-					flag = true;	
-				}
-				break;
-			case 3:
-				i = random.nextInt(5);
-				j = random.nextInt(5);
-				str = matrixGame[i][j].getText();
-				if((str.compareTo("") == 0)){
-					GameMatrix.setMatrix(matrixGame, i, j, "2");
-					flag = true;	
-				}
-				break;
-			case 4:
-				i = random.nextInt(6);// Random 0 ~ 5
-				j = random.nextInt(6);
-				str = matrixGame[i][j].getText();
-				if((str.compareTo("") == 0)){
-					GameMatrix.setMatrix(matrixGame, i, j, "2");
-					flag = true;	
-				}
-				break;
-			}
+			i = random.nextInt(4);// Random 0 ~ 3
+			j = random.nextInt(4);
 
+			// Get the current text of cell
+			str = matrixGame[i][j].getText();
+			
+			// If this cell is still empty, we initialize it
+			if((str.compareTo("") == 0)){
+				
+				// Create a new "2" cell
+				GameMatrix.setMatrix(matrixGame, i, j, "2");
+				flag = true;	
+			}
 		}
 	}
 }
