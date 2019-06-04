@@ -108,13 +108,3 @@ public class Mainmenu extends JFrame {
 		label.setFont(new Font("Verdana", Font.BOLD, 135));
 	}
 }
-
-/*
- * public static void main(String[] args) {
- * 
- * EventQueue.invokeLater(new Runnable() {
- * 
- * @Override public void run() { GameMainWindow ex = null; try { ex = new
- * GameMainWindow(); } catch (ParserConfigurationException | SAXException |
- * IOException e) { e.printStackTrace(); } ex.setVisible(true); } }); }
- */

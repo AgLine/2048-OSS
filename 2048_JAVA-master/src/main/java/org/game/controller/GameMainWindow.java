@@ -293,8 +293,8 @@ public class GameMainWindow extends JFrame{
 		    }
 		});
 
-		System.out.println(firstItem);
-		System.out.println(secondItem);	
+		//System.out.println(firstItem);
+		//System.out.println(secondItem);	
 		
 		currentScore.addKeyListener(new KeyAdapter(){				
 			public void keyPressed(KeyEvent e){
@@ -302,8 +302,8 @@ public class GameMainWindow extends JFrame{
 				if(t == 5) {
 					timer.start();
 				}
-				System.out.println(firstItem);
-				System.out.println(secondItem);
+				//System.out.println(firstItem);
+				//System.out.println(secondItem);
 				switch(code){
 				case KeyEvent.VK_LEFT:
 					Score += GameKeyEvent.do_Left(matrixGame2,t,--secondItem);

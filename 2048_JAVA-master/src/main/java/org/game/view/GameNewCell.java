@@ -41,7 +41,7 @@ public class GameNewCell {
 				}
 				break;
 			case 3:
-				i = random.nextInt(5);// Random 0 ~ 4
+				i = random.nextInt(5);
 				j = random.nextInt(5);
 				str = matrixGame[i][j].getText();
 				if((str.compareTo("") == 0)){
