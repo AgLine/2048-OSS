@@ -69,7 +69,7 @@ public class GameMainWindow extends JFrame{
 
 	    if(tilenum==5)
 	    {
-	    	setSize(1100,700);
+	    	setSize(1125,700);
 	    	final JLabel firstTimer = new JLabel();
 			firstTimer.setText(String.valueOf(100));
 			firstTimer.setFont(new Font("", Font.BOLD,40));
@@ -173,94 +173,28 @@ public class GameMainWindow extends JFrame{
 		
 		mainPanel2.setBounds(640, 150, 460, 500);	
 		mainPanel2.setLayout(null);
-		
-		matrixGame = new JLabel[4][4];	
-			
-		for(int i = 0; i < 4; i++){	//4*4 沫积己		
-			for(int j = 0; j < 4; j++){
-				matrixGame[i][j] = new JLabel();
-				matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-				matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
-				GameMatrix.setMatrix(matrixGame, i, j, "");
-				matrixGame[i][j].setOpaque(true);
-				mainPanel.add(matrixGame[i][j]);							
-			}
-		}
-
-		matrixGame2 = new JLabel[4][4];	
-			
-		for(int i = 0; i < 4; i++){	//4*4 沫积己	
-			for(int j = 0; j < 4; j++){
-				matrixGame2[i][j] = new JLabel();
-				matrixGame2[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-				matrixGame2[i][j].setBounds(120 * j, 120 * i, 100, 100);
-				GameMatrix.setMatrix(matrixGame2, i, j, "");
-				matrixGame2[i][j].setOpaque(true);
-				mainPanel2.add(matrixGame2[i][j]);							
-			}
-		}
-		
-			switch (t) {
-			case 1:
-				matrixGame = new JLabel[3][3];
-				for(i=0;i<3;i++)
+				
+		switch (tilenum) {
+		case 1:
+			matrixGame = new JLabel[3][3];
+			for(i=0;i<3;i++)
+			{
+				for (j=0;j<3;j++)
 				{
-					for (j=0;j<3;j++)
-					{
-						matrixGame[i][j]=new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(160*j, 160*i, 140, 140);
-						GameMatrix.setMatrix(matrixGame, i,	j,"");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);
-					}
+					matrixGame[i][j]=new JLabel();
+					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+					matrixGame[i][j].setBounds(160*j, 160*i, 140, 140);
+					GameMatrix.setMatrix(matrixGame, i,	j,"");
+					matrixGame[i][j].setOpaque(true);
+					mainPanel.add(matrixGame[i][j]);
 				}
-				break;
-			case 2:
-				matrixGame = new JLabel[4][4];	
-				for(i = 0; i < 4; i++){	//4*4 沫积己	
-					for(j = 0; j < 4; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-			
-			case 3:
-				matrixGame = new JLabel[5][5];	
-				for(i = 0; i < 5; i++){	//4*4 沫积己	
-					for(j = 0; j < 5; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(96 * j, 96 * i, 76, 76);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-				
-			case 4:
-				matrixGame = new JLabel[6][6];	
-				for(i = 0; i < 6; i++){	//4*4 沫积己	
-					for(j = 0; j < 6; j++){
-						matrixGame[i][j] = new JLabel();
-						matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
-						matrixGame[i][j].setBounds(80 * j, 80 * i, 60, 60);
-						GameMatrix.setMatrix(matrixGame, i, j, "");
-						matrixGame[i][j].setOpaque(true);
-						mainPanel.add(matrixGame[i][j]);							
-					}
-				}
-				break;
-				
-			case 5:matrixGame = new JLabel[4][4];	
-			
-			for(i = 0; i < 4; i++){	//2牢侩 内靛 眠啊
+			}
+			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame,t);
+			break;
+		case 2:
+			matrixGame = new JLabel[4][4];	
+			for(i = 0; i < 4; i++){		
 				for(j = 0; j < 4; j++){
 					matrixGame[i][j] = new JLabel();
 					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
@@ -270,8 +204,73 @@ public class GameMainWindow extends JFrame{
 					mainPanel.add(matrixGame[i][j]);							
 				}
 			}
+			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame,t);
 			break;
+		case 3:
+			matrixGame = new JLabel[5][5];	
+			for(i = 0; i < 5; i++){	
+				for(j = 0; j < 5; j++){
+					matrixGame[i][j] = new JLabel();
+					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+					matrixGame[i][j].setBounds(96 * j, 96 * i, 76, 76);
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+					matrixGame[i][j].setOpaque(true);
+					mainPanel.add(matrixGame[i][j]);							
+				}
 			}
+			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame,t);
+			break;
+		case 4:
+			matrixGame = new JLabel[6][6];	
+			for(i = 0; i < 6; i++){	
+				for(j = 0; j < 6; j++){
+					matrixGame[i][j] = new JLabel();
+					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+					matrixGame[i][j].setBounds(80 * j, 80 * i, 60, 60);
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+					matrixGame[i][j].setOpaque(true);
+					mainPanel.add(matrixGame[i][j]);							
+				}
+			}
+			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame,t);
+			break;
+
+		case 5:
+			matrixGame = new JLabel[4][4];	
+
+			for(int i = 0; i < 4; i++){	//4*4 沫积己		
+				for(int j = 0; j < 4; j++){
+					matrixGame[i][j] = new JLabel();
+					matrixGame[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+					matrixGame[i][j].setBounds(120 * j, 120 * i, 100, 100);
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+					matrixGame[i][j].setOpaque(true);
+					mainPanel.add(matrixGame[i][j]);							
+				}
+			}
+
+			matrixGame2 = new JLabel[4][4];	
+
+			for(int i = 0; i < 4; i++){	//4*4 沫积己	
+				for(int j = 0; j < 4; j++){
+					matrixGame2[i][j] = new JLabel();
+					matrixGame2[i][j].setHorizontalAlignment(SwingConstants.CENTER);
+					matrixGame2[i][j].setBounds(120 * j, 120 * i, 100, 100);
+					GameMatrix.setMatrix(matrixGame2, i, j, "");
+					matrixGame2[i][j].setOpaque(true);
+					mainPanel2.add(matrixGame2[i][j]);							
+				}
+			}
+			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame,t);
+			
+			GameNewCell.CreateNew(matrixGame2,t);
+			GameNewCell.CreateNew(matrixGame2,t);
+			break;
+		}
 		add(mainPanel);
 		add(mainPanel2);
 		
@@ -375,16 +374,6 @@ public class GameMainWindow extends JFrame{
             	}           
             }  
         });  
-		
-		/*
-		 * Create two random positions "2" elements for a new game
-		 */
-		GameNewCell.CreateNew(matrixGame,t);
-		GameNewCell.CreateNew(matrixGame,t);
-		
-		GameNewCell.CreateNew(matrixGame2,t);
-		GameNewCell.CreateNew(matrixGame2,t);
-		
 		
 	}
 }

@@ -111,7 +111,10 @@ public class GameKeyEvent {
 				}
 			}
 			break;
-		case 5:		
+		case 5:
+			if(itemnum == 0) {
+				GameNewItem.CreateNew(matrixGame);
+			}
 			for(int i = 0; i < 4; i++){	
 				edgeLimit = 5;
 				for(int k = 0; k < 3; k++){
@@ -126,18 +129,16 @@ public class GameKeyEvent {
 							num  = Integer.parseInt(str);
 							score += num;
 							str = String.valueOf(2 * num);
-							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								GameMatrix.setMatrix(matrixGame, i+1, j, "");
-							}
 							GameMatrix.setMatrix(matrixGame, i, j-1, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
+							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+								GameMatrix.setMatrix(matrixGame, i, j-1, "");
+								GameMatrix.setMatrix(matrixGame, i, j, "");
+							}
 							edgeLimit = j;
 						}
 					}	
 				}
-			}
-			if(itemnum == 0) {
-				GameNewItem.CreateNew(matrixGame);
 			}
 			break;
 		}
@@ -166,6 +167,10 @@ public class GameKeyEvent {
 						str = String.valueOf(2 * num);
 						GameMatrix.setMatrix(matrixGame, i, j-1, str);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
+						if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+							GameMatrix.setMatrix(matrixGame, i, j-1, "");
+							GameMatrix.setMatrix(matrixGame, i, j, "");
+						}
 						edgeLimit = j;
 					}
 				}	
@@ -298,11 +303,12 @@ public class GameKeyEvent {
 							num  = Integer.parseInt(str);
 							score += num;
 							str = String.valueOf(2 * num);
-							if(str.compareTo("24")==24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								GameMatrix.setMatrix(matrixGame, i+1, j, "");
-							}
-							GameMatrix.setMatrix(matrixGame, i, j+1, str);
+							GameMatrix.setMatrix(matrixGame, i, j+1, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
+							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+								GameMatrix.setMatrix(matrixGame, i, j-1, "");
+								GameMatrix.setMatrix(matrixGame, i, j, "");
+							}
 							edgeLimit = j;
 						}
 					}
@@ -339,6 +345,10 @@ public class GameKeyEvent {
 						str = String.valueOf(2 * num);
 						GameMatrix.setMatrix(matrixGame, i, j+1, str);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
+						if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+							GameMatrix.setMatrix(matrixGame, i, j-1, "");
+							GameMatrix.setMatrix(matrixGame, i, j, "");
+						}
 						edgeLimit = j;
 					}
 				}
@@ -471,11 +481,12 @@ public class GameKeyEvent {
 							num  = Integer.parseInt(str);
 							score += num;
 							str = String.valueOf(2 * num);
-							if(str.compareTo("24")==24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								GameMatrix.setMatrix(matrixGame, i+1, j, "");
-							}
 							GameMatrix.setMatrix(matrixGame, i-1, j, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
+							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+								GameMatrix.setMatrix(matrixGame, i, j-1, "");
+								GameMatrix.setMatrix(matrixGame, i, j, "");
+							}
 							edgeLimit = i;
 						}
 					}
@@ -513,6 +524,10 @@ public class GameKeyEvent {
 						str = String.valueOf(2 * num);
 						GameMatrix.setMatrix(matrixGame, i-1, j, str);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
+						if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+							GameMatrix.setMatrix(matrixGame, i, j-1, "");
+							GameMatrix.setMatrix(matrixGame, i, j, "");
+						}
 						edgeLimit = i;
 					}
 				}
@@ -643,11 +658,12 @@ public class GameKeyEvent {
 							num  = Integer.parseInt(str);
 							score += num;
 							str = String.valueOf(2 * num);
-							if(str.compareTo("24")==24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								GameMatrix.setMatrix(matrixGame, i+1, j, "");
-							}
 							GameMatrix.setMatrix(matrixGame, i+1, j, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
+							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+								GameMatrix.setMatrix(matrixGame, i, j-1, "");
+								GameMatrix.setMatrix(matrixGame, i, j, "");
+							}
 							edgeLimit = i;
 						}
 					}
@@ -685,6 +701,10 @@ public class GameKeyEvent {
 						str = String.valueOf(2 * num);
 						GameMatrix.setMatrix(matrixGame, i+1, j, str);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
+						if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
+							GameMatrix.setMatrix(matrixGame, i, j-1, "");
+							GameMatrix.setMatrix(matrixGame, i, j, "");
+						}
 						edgeLimit = i;
 					}
 				}

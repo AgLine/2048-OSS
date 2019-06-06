@@ -3,13 +3,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class window {
-
-	/*
-	 * public static void main(String[] args) { int str=0; if(str==2048) { int
-	 * optionType;
-	 * JOptionPane.showConfirmDialog(null,"계속하시겠습니까?","continue",JOptionPane.
-	 * YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE); }
-	 */
 		
 	public static void over(JLabel[][] matrixGame) {
 

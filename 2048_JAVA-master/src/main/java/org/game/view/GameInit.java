@@ -21,13 +21,29 @@ public class GameInit {
 					GameMatrix.setMatrix(matrixGame, i, j, "");
 				}
 			}
-		
+			break;
+		case 5:
 		case 2:
 			for(int i=0; i<4 ;i++){
 				for(int j=0; j<4; j++){
 					GameMatrix.setMatrix(matrixGame, i, j, "");
 				}
 			}
+			break;
+		case 3:
+			for(int i=0; i<5 ;i++){
+				for(int j=0; j<5; j++){
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+				}
+			}
+			break;
+		case 4:
+			for(int i=0; i<6 ;i++){
+				for(int j=0; j<6; j++){
+					GameMatrix.setMatrix(matrixGame, i, j, "");
+				}
+			}
+			break;
 			
 		}
 		
