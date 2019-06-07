@@ -18,7 +18,7 @@ public class GameNewItem {
 		while(!flag){
 			i = random.nextInt(4);// Random 0 ~ 3
 			j = random.nextInt(4);
-			k = random.nextInt(3);
+			k = random.nextInt(2);
 			// Get the current text of cell
 			str = matrixGame[i][j].getText();
 			
@@ -28,10 +28,8 @@ public class GameNewItem {
 				// Create a new item cell
 				if(k == 0) {
 					GameMatrix.setMatrix(matrixGame, i, j, "10");
-				}else if(k == 1) {
-					GameMatrix.setMatrix(matrixGame, i, j, "11");
 				}else {
-					GameMatrix.setMatrix(matrixGame, i, j, "12");
+					GameMatrix.setMatrix(matrixGame, i, j, "11");
 				}
 				flag = true;	
 			}

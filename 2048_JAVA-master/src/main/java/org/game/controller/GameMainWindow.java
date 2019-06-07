@@ -28,7 +28,6 @@ import javax.xml.transform.TransformerException;
 import org.game.model.BestScore;
 import org.game.view.GameScore;
 import org.game.view.GameNewCell;
-import org.game.view.GameNewItem;
 import org.game.view.GameKeyEvent;
 import org.game.view.GameInit;
 import org.game.view.GameMatrix;
@@ -39,9 +38,6 @@ import org.xml.sax.SAXException;
 
 public class GameMainWindow extends JFrame{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private int Score;
@@ -304,43 +300,97 @@ public class GameMainWindow extends JFrame{
 				if(t == 5) {
 					timer.start();
 				}
-				//System.out.println(firstItem);
-				//System.out.println(secondItem);
 				switch(code){
 				case KeyEvent.VK_LEFT:
 					Score += GameKeyEvent.do_Left(matrixGame2,t,--secondItem);
+					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
+						is = is+10;
+						GameKeyEvent.cnt2 = 0;
+					}else if(GameKeyEvent.timer2() == 2){
+						js = js-10;
+						GameKeyEvent.cnt2 = 0;
+					}
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_A:		    
 					Score += GameKeyEvent.do_a_Left(matrixGame,t,--firstItem);
+					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
+						js = js+10;
+						GameKeyEvent.cnt1 = 0;
+					}else if(GameKeyEvent.timer1() == 2){
+						is = is-10;
+						GameKeyEvent.cnt1 = 0;
+					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_RIGHT:
 					Score += GameKeyEvent.do_Right(matrixGame2,t,--secondItem);
+					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
+						is = is+10;
+						GameKeyEvent.cnt2 = 0;
+					}else if(GameKeyEvent.timer2() == 2){
+						js = js-10;
+						GameKeyEvent.cnt2 = 0;
+					}
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_D:
 					Score += GameKeyEvent.do_d_Right(matrixGame,t,--firstItem);
+					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
+						js = js+10;
+						GameKeyEvent.cnt1 = 0;
+					}else if(GameKeyEvent.timer1() == 2){
+						is = is-10;
+						GameKeyEvent.cnt1 = 0;
+					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_UP:
 					Score += GameKeyEvent.do_Up(matrixGame2,t,--secondItem);
+					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
+						is = is+10;
+						GameKeyEvent.cnt2 = 0;
+					}else if(GameKeyEvent.timer2() == 2){
+						js = js-10;
+						GameKeyEvent.cnt2 = 0;
+					}
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_W:
 					Score += GameKeyEvent.do_w_Up(matrixGame,t,--firstItem);
+					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
+						js = js+10;
+						GameKeyEvent.cnt1 = 0;
+					}else if(GameKeyEvent.timer1() == 2){
+						is = is-10;
+						GameKeyEvent.cnt1 = 0;
+					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
 				case KeyEvent.VK_DOWN:
 					Score += GameKeyEvent.do_Down(matrixGame2,t,--secondItem);
+					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
+						is = is+10;
+						GameKeyEvent.cnt2 = 0;
+					}else if(GameKeyEvent.timer2() == 2){
+						js = js-10;
+						GameKeyEvent.cnt2 = 0;
+					}
 					currentScore2.setText(" SCORE : " + String.valueOf(Score));
 					break;
 				case KeyEvent.VK_S:
 					Score += GameKeyEvent.do_s_Down(matrixGame,t,--firstItem);
+					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
+						js = js+10;
+						GameKeyEvent.cnt1 = 0;
+					}else if(GameKeyEvent.timer1() == 2){
+						is = is-10;
+						GameKeyEvent.cnt1 = 0;
+					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
 					window.over(matrixGame);
 					break;
