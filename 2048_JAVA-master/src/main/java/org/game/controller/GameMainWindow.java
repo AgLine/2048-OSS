@@ -66,7 +66,9 @@ public class GameMainWindow extends JFrame{
 		getContentPane().setLayout(null);
 	    setResizable(false);
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
-
+	    
+	    //2인용일 경우의 타이머,size = 1125,700
+	    //1인용일 경우 size = 500,700
 	    if(tilenum==5)
 	    {
 	    	setSize(1125,700);
@@ -173,7 +175,8 @@ public class GameMainWindow extends JFrame{
 		
 		mainPanel2.setBounds(640, 150, 460, 500);	
 		mainPanel2.setLayout(null);
-				
+		
+		//타일생성
 		switch (tilenum) {
 		case 1:
 			matrixGame = new JLabel[3][3];
