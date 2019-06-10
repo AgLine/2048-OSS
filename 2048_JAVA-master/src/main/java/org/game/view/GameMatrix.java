@@ -79,7 +79,7 @@ public class GameMatrix {
 			case "10":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
 				break;
-			case "11":
+			case "30":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
 				break;
 			case "": 

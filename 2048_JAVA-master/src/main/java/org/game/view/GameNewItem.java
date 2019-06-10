@@ -29,7 +29,7 @@ public class GameNewItem {
 				if(k == 0) {
 					GameMatrix.setMatrix(matrixGame, i, j, "10");
 				}else {
-					GameMatrix.setMatrix(matrixGame, i, j, "11");
+					GameMatrix.setMatrix(matrixGame, i, j, "30");
 				}
 				flag = true;	
 			}

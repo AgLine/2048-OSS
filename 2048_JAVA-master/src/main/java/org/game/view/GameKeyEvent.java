@@ -133,10 +133,10 @@ public class GameKeyEvent {
 							GameMatrix.setMatrix(matrixGame, i, j, "");
 							edgeLimit = j;
 						}
-						if(str.equals("22")|| str.equals("20")) {
+						if(str.equals("60")|| str.equals("20")) {
 							GameMatrix.setMatrix(matrixGame, i, j-1, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.equals("22")) {
+							if(str.equals("60")) {
 								cnt2 = 1;
 							}else if(str.equals("20")) {
 								cnt2 = 2;
@@ -173,11 +173,11 @@ public class GameKeyEvent {
 						str = String.valueOf(2 * num);
 						GameMatrix.setMatrix(matrixGame, i, j-1, str);
 						GameMatrix.setMatrix(matrixGame, i, j, "");
-						if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+						if(str.equals("60")|| str.equals("20")) {
 							System.out.print(0);
 							GameMatrix.setMatrix(matrixGame, i, j-1, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.equals("22")) {
+							if(str.equals("60")) {
 								cnt1 = 1;
 							}else if(str.equals("20")) {
 								cnt1 = 2;
@@ -317,18 +317,13 @@ public class GameKeyEvent {
 							str = String.valueOf(2 * num);
 							GameMatrix.setMatrix(matrixGame, i, j+1, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.compareTo("24")== 24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								System.out.print(0);
-								GameMatrix.setMatrix(matrixGame, i, j-1, "");
-								GameMatrix.setMatrix(matrixGame, i, j, "");
-							}
 							edgeLimit = j;
 						}
-						if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+						if(str.equals("60")|| str.equals("20")) {
 							System.out.print(0);
 							GameMatrix.setMatrix(matrixGame, i, j+1, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.equals("22")) {
+							if(str.equals("60")) {
 								cnt2 = 1;
 							}else if(str.equals("20")) {
 								cnt2 = 2;
@@ -356,7 +351,6 @@ public class GameKeyEvent {
 			for(int k = 0; k < 3; k++){
 				for(int j = 2; j >= 0; j--){
 					str = matrixGame[i][j].getText();
-					//System.out.println(str);
 					strNeighbour = matrixGame[i][j + 1].getText();
 
 					if(strNeighbour.compareTo("") == 0){
@@ -371,11 +365,11 @@ public class GameKeyEvent {
 						GameMatrix.setMatrix(matrixGame, i, j, "");
 						edgeLimit = j;
 					}
-					if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+					if(str.equals("60")|| str.equals("20")) {
 						System.out.print(0);
 						GameMatrix.setMatrix(matrixGame, i, j+1, "");
 						GameMatrix.setMatrix(matrixGame, i, j, "");
-						if(str.equals("22")) {
+						if(str.equals("60")) {
 							cnt1 = 1;
 						}else if(str.equals("20")) {
 							cnt1 = 2;
@@ -412,9 +406,6 @@ public class GameKeyEvent {
 							num  = Integer.parseInt(str);
 							score += num;
 							str = String.valueOf(2 * num);
-							if(str.compareTo("24")==24 || str.compareTo("22")==22 || str.compareTo("20")==20) {
-								GameMatrix.setMatrix(matrixGame, i+1, j, "");
-							}
 							GameMatrix.setMatrix(matrixGame, i-1, j, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
 							edgeLimit = i;
@@ -514,11 +505,11 @@ public class GameKeyEvent {
 							GameMatrix.setMatrix(matrixGame, i-1, j, str);
 							GameMatrix.setMatrix(matrixGame, i, j, "");
 						}
-						if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+						if(str.equals("60")|| str.equals("20")) {
 							System.out.print(0);
 							GameMatrix.setMatrix(matrixGame, i-1, j, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.equals("22")) {
+							if(str.equals("60")) {
 								cnt2 = 1;
 							}else if(str.equals("20")) {
 								cnt2 = 2;
@@ -562,11 +553,11 @@ public class GameKeyEvent {
 						GameMatrix.setMatrix(matrixGame, i, j, "");
 						edgeLimit = i;
 					}
-					if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+					if(str.equals("60")|| str.equals("20")) {
 						System.out.print(0);
 						GameMatrix.setMatrix(matrixGame, i-1, j, "");
 						GameMatrix.setMatrix(matrixGame, i, j, "");
-						if(str.equals("22")) {
+						if(str.equals("60")) {
 							cnt1 = 1;
 						}else if(str.equals("20")) {
 							cnt1 = 2;
@@ -704,11 +695,11 @@ public class GameKeyEvent {
 							GameMatrix.setMatrix(matrixGame, i, j, "");
 							edgeLimit = i;
 						}
-						if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+						if(str.equals("60")|| str.equals("20")) {
 							System.out.print(0);
 							GameMatrix.setMatrix(matrixGame, i+1, j, "");
 							GameMatrix.setMatrix(matrixGame, i, j, "");
-							if(str.equals("22")) {
+							if(str.equals("60")) {
 								cnt2 = 1;
 							}else if(str.equals("20")) {
 								cnt2 = 2;
@@ -751,11 +742,11 @@ public class GameKeyEvent {
 						GameMatrix.setMatrix(matrixGame, i, j, "");
 						edgeLimit = i;
 					}
-					if(str.equals("24") || str.equals("22")|| str.equals("20")) {
+					if(str.equals("60")|| str.equals("20")) {
 						System.out.print(0);
 						GameMatrix.setMatrix(matrixGame, i+1, j, "");
 						GameMatrix.setMatrix(matrixGame, i, j, "");
-						if(str.equals("22")) {
+						if(str.equals("60")) {
 							cnt1 = 1;
 						}else if(str.equals("20")) {
 							cnt1 = 2;

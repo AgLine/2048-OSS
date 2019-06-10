@@ -94,13 +94,19 @@ public class GameMainWindow extends JFrame{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					firstTimer.setText(String.valueOf(100-is));
-					is++;
+					++is;
 					secondTimer.setText(String.valueOf(100-js));
-					js++;
-					if(is == 100) {
+					++js;
+					if(is == 101) {
 						GameOver.secondWin();
-					}else if(js == 100) {
+						timer.stop();
+						is = 0;
+						js = 0;
+					}else if(js == 101) {
 						GameOver.firstWin();
+						timer.stop();
+						is = 0;
+						js = 0;
 					}
 				}
 			});		
@@ -298,6 +304,9 @@ public class GameMainWindow extends JFrame{
 		    @Override
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
+		    	timer.stop();
+		    	is = 0;
+		    	js = 0;
 		    	Mainmenu mainmenu=new Mainmenu();
 				mainmenu.setVisible(true);
 				dispose();
@@ -314,7 +323,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_LEFT:
 					Score += GameKeyEvent.do_Left(matrixGame2,t,--secondItem);
 					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
-						is = is+10;
+						is = is+30;
 						GameKeyEvent.cnt2 = 0;
 					}else if(GameKeyEvent.timer2() == 2){
 						js = js-10;
@@ -331,7 +340,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_A:		    
 					Score += GameKeyEvent.do_a_Left(matrixGame,t,--firstItem);
 					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
-						js = js+10;
+						js = js+30;
 						GameKeyEvent.cnt1 = 0;
 					}else if(GameKeyEvent.timer1() == 2){
 						is = is-10;
@@ -343,7 +352,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_RIGHT:
 					Score += GameKeyEvent.do_Right(matrixGame2,t,--secondItem);
 					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
-						is = is+10;
+						is = is+30;
 						GameKeyEvent.cnt2 = 0;
 					}else if(GameKeyEvent.timer2() == 2){
 						js = js-10;
@@ -360,7 +369,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_D:
 					Score += GameKeyEvent.do_d_Right(matrixGame,t,--firstItem);
 					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
-						js = js+10;
+						js = js+30;
 						GameKeyEvent.cnt1 = 0;
 					}else if(GameKeyEvent.timer1() == 2){
 						is = is-10;
@@ -372,7 +381,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_UP:
 					Score += GameKeyEvent.do_Up(matrixGame2,t,--secondItem);
 					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
-						is = is+10;
+						is = is+30;
 						GameKeyEvent.cnt2 = 0;
 					}else if(GameKeyEvent.timer2() == 2){
 						js = js-10;
@@ -389,7 +398,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_W:
 					Score += GameKeyEvent.do_w_Up(matrixGame,t,--firstItem);
 					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
-						js = js+10;
+						js = js+30;
 						GameKeyEvent.cnt1 = 0;
 					}else if(GameKeyEvent.timer1() == 2){
 						is = is-10;
@@ -401,7 +410,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_DOWN:
 					Score += GameKeyEvent.do_Down(matrixGame2,t,--secondItem);
 					if(GameKeyEvent.timer2() == 1) {//상대방 타이머줄이기
-						is = is+10;
+						is = is+30;
 						GameKeyEvent.cnt2 = 0;
 					}else if(GameKeyEvent.timer2() == 2){
 						js = js-10;
@@ -418,7 +427,7 @@ public class GameMainWindow extends JFrame{
 				case KeyEvent.VK_S:
 					Score += GameKeyEvent.do_s_Down(matrixGame,t,--firstItem);
 					if(GameKeyEvent.timer1() == 1) {//상대방 타이머줄이기
-						js = js+10;
+						js = js+30;
 						GameKeyEvent.cnt1 = 0;
 					}else if(GameKeyEvent.timer1() == 2){
 						is = is-10;
