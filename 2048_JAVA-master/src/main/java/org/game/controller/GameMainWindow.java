@@ -86,8 +86,8 @@ public class GameMainWindow extends JFrame{
 	    if(tilenum==5)
 	    {
 	    	setSize(1135,700);
-	    	add(firstTimer);
-	    	add(secondTimer);
+	    	getContentPane().add(firstTimer);
+	    	getContentPane().add(secondTimer);
 			
 			timer = new Timer(1000, new ActionListener() {
 				
@@ -124,7 +124,7 @@ public class GameMainWindow extends JFrame{
 		gameTitle.setFont(Ftitle);
 		gameTitle.setForeground(Color.decode("#776e65"));
 		gameTitle.setBounds(20, 50, 300, 100);
-		add(gameTitle);
+		getContentPane().add(gameTitle);
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
@@ -133,7 +133,7 @@ public class GameMainWindow extends JFrame{
 		currentScore.setFont(Fsmall);
 		currentScore.setBounds(350, 20, 130, 50);
 		currentScore.setEditable(false);
-		add(currentScore);
+		getContentPane().add(currentScore);
 
 		final JTextField currentScore2 = new JTextField(" SCORE :0");
 		currentScore2.setOpaque(true); 
@@ -142,7 +142,7 @@ public class GameMainWindow extends JFrame{
 		currentScore2.setFont(Fsmall);
 		currentScore2.setBounds(970, 20, 130, 50);
 		currentScore2.setEditable(false);
-		add(currentScore2);
+		getContentPane().add(currentScore2);
 
 		
 		final JLabel bestScore = new JLabel();
@@ -166,13 +166,13 @@ public class GameMainWindow extends JFrame{
 			newGame.setBounds(350, 80, 130, 30);
 		}
 		
-		add(newGame);
+		getContentPane().add(newGame);
 		
 		JLabel copyRight = new JLabel();
 		copyRight.setText("© 2014 Chuan Dong. Simulation of game 2048 by Java Swing");
 		copyRight.setFont(new Font("", Font.BOLD,10));
 		copyRight.setBounds(20, 630, 150, 50);
-		add(copyRight);
+		getContentPane().add(copyRight);
 		
 		/*
 		 * Panel
@@ -287,8 +287,8 @@ public class GameMainWindow extends JFrame{
 			GameNewCell.CreateNew(matrixGame2,t);
 			break;
 		}
-		add(mainPanel);
-		add(mainPanel2);
+		getContentPane().add(mainPanel);
+		getContentPane().add(mainPanel2);
 		
 		Score = 0;
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
@@ -302,14 +302,16 @@ public class GameMainWindow extends JFrame{
 		newGame.addMouseListener(new MouseAdapter()
 		{
 		    @Override
-		    public void mouseClicked(MouseEvent arg0) 
+		    public void mouseClicked(MouseEvent m) 
 		    {
+		    	Mainmenu Mainmenu = new Mainmenu();
+				Mainmenu.setVisible(true);
+				dispose();
+		    	if(t==5) {
 		    	timer.stop();
 		    	is = 0;
 		    	js = 0;
-		    	Mainmenu mainmenu=new Mainmenu();
-				mainmenu.setVisible(true);
-				dispose();
+		    	}
 		    }
 		});
 		

@@ -49,31 +49,38 @@ public class GameMatrix {
 				break;
 			case "128":
 				matrixGame[i][j].setBackground(Color.decode("#E3C762"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,30)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "256":
 				matrixGame[i][j].setBackground(Color.decode("#edcc61"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,30)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "512":
 				matrixGame[i][j].setBackground(Color.decode("#f9ca58"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,30)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "1024":
 				matrixGame[i][j].setBackground(Color.decode("#e3ba14"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,25)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "2048":
 				matrixGame[i][j].setBackground(Color.decode("#FAB20A"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,25)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 				
 			case "4096":
 				matrixGame[i][j].setBackground(Color.decode("#60d994"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,25)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "8192":
 				matrixGame[i][j].setBackground(Color.decode("#53bb7e"));
+				matrixGame[i][j].setFont(new Font(str,Font.BOLD,25)); 
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "10":
