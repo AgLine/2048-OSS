@@ -51,19 +51,24 @@ public class Mainmenu extends JFrame {
 		setBounds(100, 100, 500, 700);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.decode("#FDE6DB"));
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(null);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(173, 216, 230));
 		JLabel backlb = new JLabel("");
 		backlb.setIcon(new ImageIcon("back.PNG"));
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnOnePlayer = new JButton("One Player");
-		btnOnePlayer.setBounds(137, 257, 200, 41);
-		btnOnePlayer.setBackground(Color.WHITE);
+		
+		JButton btnOnePlayer = new JButton(new ImageIcon("One player.png"));
+		btnOnePlayer.setBorderPainted(false);
+		btnOnePlayer.setContentAreaFilled(false);
+		btnOnePlayer.setFocusPainted(false);
+		btnOnePlayer.setBounds(80, 189, 330, 100);
+		btnOnePlayer.setBackground(Color.decode("#d5e5f2"));
 		panel.add(btnOnePlayer);
 		btnOnePlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -73,11 +78,14 @@ public class Mainmenu extends JFrame {
 				}}
 		);
 		
-		JButton btnNewButton = new JButton("Two Player");
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(137, 335, 200, 41);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		
+		JButton btnTwoPlayer = new JButton(new ImageIcon("Two Player.png"));
+		btnTwoPlayer.setBorderPainted(false);
+		btnTwoPlayer.setContentAreaFilled(false);
+		btnTwoPlayer.setFocusPainted(false);
+		btnTwoPlayer.setBounds(80, 299, 330, 100);
+		panel.add(btnTwoPlayer);
+		btnTwoPlayer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a2) {
 				try {
 					GameMainWindow join = new GameMainWindow(5);
@@ -90,11 +98,13 @@ public class Mainmenu extends JFrame {
 			}
 		});
 		
-		JButton btnNewButton_1 = new JButton("Help");
-		btnNewButton_1.setBounds(137, 406, 200, 41);
-		btnNewButton_1.setBackground(Color.WHITE);
-		panel.add(btnNewButton_1);
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnHelp = new JButton(new ImageIcon("Help.png"));
+		btnHelp.setBorderPainted(false);
+		btnHelp.setContentAreaFilled(false);
+		btnHelp.setFocusPainted(false);
+		btnHelp.setBounds(80, 409, 330, 100);
+		panel.add(btnHelp);
+		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent a3) {
 				HelpWindow help = new HelpWindow();
 				help.setVisible(true);
@@ -102,11 +112,21 @@ public class Mainmenu extends JFrame {
 		}
 	});
 		
+		JButton Close = new JButton(new ImageIcon("Close.png"));
+		Close.setBorderPainted(false);
+		Close.setContentAreaFilled(false);
+		Close.setFocusPainted(false);
+		Close.setBounds(80, 519, 330, 100);
+		panel.add(Close);
+		Close.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent a4) {
+				System.exit(0);	
+		}
+	});
 		
-		JLabel label = new JLabel("2048");
-		label.setVerticalAlignment(SwingConstants.TOP);
-		label.setBounds(0, 0, 430, 209);
-		panel.add(label);
-		label.setFont(new Font("Verdana", Font.BOLD, 135));
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("mainbg.png"));
+		lblNewLabel.setBounds(0, -30, 500, 700);
+		panel.add(lblNewLabel);
 	}
 }
