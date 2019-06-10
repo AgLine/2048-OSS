@@ -10,6 +10,7 @@ import java.io.IOException;
 import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.Color;
@@ -55,7 +56,8 @@ public class Mainmenu extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.decode("#FDE6DB"));
+		JLabel backlb = new JLabel("");
+		backlb.setIcon(new ImageIcon("back.PNG"));
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		

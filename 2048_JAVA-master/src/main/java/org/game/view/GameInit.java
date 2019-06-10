@@ -43,8 +43,7 @@ public class GameInit {
 					GameMatrix.setMatrix(matrixGame, i, j, "");
 				}
 			}
-			break;
-			
+			break;		
 		}
 		
 		//Create two random positions "2" elements for a new game

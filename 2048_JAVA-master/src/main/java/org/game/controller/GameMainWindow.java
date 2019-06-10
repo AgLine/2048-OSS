@@ -31,7 +31,7 @@ import org.game.view.GameNewCell;
 import org.game.view.GameKeyEvent;
 import org.game.view.GameInit;
 import org.game.view.GameMatrix;
-import org.game.view.window;
+import org.game.view.GameOver;
 import org.xml.sax.SAXException;
 
 
@@ -65,22 +65,22 @@ public class GameMainWindow extends JFrame{
 	    
 	    //2인용일 경우의 타이머,size = 1125,700
 	    //1인용일 경우 size = 500,700
+	    final JLabel firstTimer = new JLabel();
+		firstTimer.setText(String.valueOf(100));
+		firstTimer.setFont(new Font("", Font.BOLD,40));
+		firstTimer.setForeground(Color.decode("#776e65"));
+		firstTimer.setBounds(350, 80, 150, 50);
+		add(firstTimer);
+		
+		final JLabel secondTimer = new JLabel();
+		secondTimer.setText(String.valueOf(100));
+		secondTimer.setFont(new Font("", Font.BOLD,40));
+		secondTimer.setForeground(Color.decode("#776e65"));
+		secondTimer.setBounds(950, 80, 150, 50);
+		add(secondTimer);
 	    if(tilenum==5)
 	    {
 	    	setSize(1125,700);
-	    	final JLabel firstTimer = new JLabel();
-			firstTimer.setText(String.valueOf(100));
-			firstTimer.setFont(new Font("", Font.BOLD,40));
-			firstTimer.setForeground(Color.decode("#776e65"));
-			firstTimer.setBounds(350, 80, 150, 50);
-			add(firstTimer);
-			
-			final JLabel secondTimer = new JLabel();
-			secondTimer.setText(String.valueOf(100));
-			secondTimer.setFont(new Font("", Font.BOLD,40));
-			secondTimer.setForeground(Color.decode("#776e65"));
-			secondTimer.setBounds(950, 80, 150, 50);
-			add(secondTimer);
 			
 			timer = new Timer(1000, new ActionListener() {
 				
@@ -90,8 +90,13 @@ public class GameMainWindow extends JFrame{
 					is++;
 					secondTimer.setText(String.valueOf(100-js));
 					js++;
+					if(is == 100) {
+						GameOver.secondWin();
+					}else if(js == 100) {
+						GameOver.firstWin();
+					}
 				}
-			});
+			});		
 	    }
 	    else
 	    {
@@ -148,7 +153,11 @@ public class GameMainWindow extends JFrame{
 		newGame.setFont(new Font("", Font.BOLD,15));
 		newGame.setBackground(Color.decode("#8f7a66"));
 		newGame.setForeground(Color.decode("#f9f6f2"));
-		newGame.setBounds(500, 80, 130, 30);
+		if(t == 5) {
+			newGame.setBounds(500, 80, 130, 30);
+		}else {
+			newGame.setBounds(350, 80, 130, 30);
+		}
 		add(newGame);
 	
 		JLabel copyRight = new JLabel();
@@ -203,8 +212,8 @@ public class GameMainWindow extends JFrame{
 					mainPanel.add(matrixGame2[i][j]);							
 				}
 			}
-			GameNewCell.CreateNew(matrixGame,t);
-			GameNewCell.CreateNew(matrixGame,t);
+			GameNewCell.CreateNew(matrixGame2,t);
+			GameNewCell.CreateNew(matrixGame2,t);
 			break;
 		case 3:
 			matrixGame2 = new JLabel[5][5];	
@@ -287,15 +296,23 @@ public class GameMainWindow extends JFrame{
 		    @Override
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
-		    	GameInit.startNewGame(matrixGame,t);
+		    	if(t == 5) {
+		    		timer.stop();
+		    		firstTimer.setText(String.valueOf(100-is));
+		    		secondTimer.setText(String.valueOf(100-js));
+		    		GameInit.startNewGame(matrixGame,t);
+		    		GameInit.startNewGame(matrixGame2,t);
+		    		is = 0;
+		    		js = 0;
+		    	}else {
+		    		GameInit.startNewGame(matrixGame2,t);
+		    	}
 		    }
 		});
-
-		//System.out.println(firstItem);
-		//System.out.println(secondItem);	
 		
 		currentScore.addKeyListener(new KeyAdapter(){				
 			public void keyPressed(KeyEvent e){
+				System.out.println(0);
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
 				if(t == 5) {
 					timer.start();
@@ -310,8 +327,13 @@ public class GameMainWindow extends JFrame{
 						js = js-10;
 						GameKeyEvent.cnt2 = 0;
 					}
-					currentScore2.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
+					if(t == 5) {
+						currentScore2.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}else {
+						currentScore.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}
 					break;
 				case KeyEvent.VK_A:		    
 					Score += GameKeyEvent.do_a_Left(matrixGame,t,--firstItem);
@@ -323,7 +345,7 @@ public class GameMainWindow extends JFrame{
 						GameKeyEvent.cnt1 = 0;
 					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
+					GameOver.over(matrixGame,t);
 					break;
 				case KeyEvent.VK_RIGHT:
 					Score += GameKeyEvent.do_Right(matrixGame2,t,--secondItem);
@@ -334,7 +356,13 @@ public class GameMainWindow extends JFrame{
 						js = js-10;
 						GameKeyEvent.cnt2 = 0;
 					}
-					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					if(t == 5) {
+						currentScore2.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}else {
+						currentScore.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}
 					break;
 				case KeyEvent.VK_D:
 					Score += GameKeyEvent.do_d_Right(matrixGame,t,--firstItem);
@@ -346,7 +374,7 @@ public class GameMainWindow extends JFrame{
 						GameKeyEvent.cnt1 = 0;
 					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
+					GameOver.over(matrixGame,t);
 					break;
 				case KeyEvent.VK_UP:
 					Score += GameKeyEvent.do_Up(matrixGame2,t,--secondItem);
@@ -357,7 +385,13 @@ public class GameMainWindow extends JFrame{
 						js = js-10;
 						GameKeyEvent.cnt2 = 0;
 					}
-					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					if(t == 5) {
+						currentScore2.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}else {
+						currentScore.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}
 					break;
 				case KeyEvent.VK_W:
 					Score += GameKeyEvent.do_w_Up(matrixGame,t,--firstItem);
@@ -369,7 +403,7 @@ public class GameMainWindow extends JFrame{
 						GameKeyEvent.cnt1 = 0;
 					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
+					GameOver.over(matrixGame,t);
 					break;
 				case KeyEvent.VK_DOWN:
 					Score += GameKeyEvent.do_Down(matrixGame2,t,--secondItem);
@@ -380,7 +414,13 @@ public class GameMainWindow extends JFrame{
 						js = js-10;
 						GameKeyEvent.cnt2 = 0;
 					}
-					currentScore2.setText(" SCORE : " + String.valueOf(Score));
+					if(t == 5) {
+						currentScore2.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}else {
+						currentScore.setText(" SCORE : " + String.valueOf(Score));
+						GameOver.over(matrixGame2,t);
+					}
 					break;
 				case KeyEvent.VK_S:
 					Score += GameKeyEvent.do_s_Down(matrixGame,t,--firstItem);
@@ -392,7 +432,7 @@ public class GameMainWindow extends JFrame{
 						GameKeyEvent.cnt1 = 0;
 					}
 					currentScore.setText(" SCORE : " + String.valueOf(Score));
-					window.over(matrixGame);
+					GameOver.over(matrixGame,t);
 					break;
 				}
 				
@@ -411,6 +451,7 @@ public class GameMainWindow extends JFrame{
 					secondItem = random.nextInt(10);
 					secondItemCnt--;
 				}
+				
 			}
 		});
 		

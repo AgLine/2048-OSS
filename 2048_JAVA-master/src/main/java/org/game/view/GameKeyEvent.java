@@ -92,7 +92,7 @@ public class GameKeyEvent {
 			for(int i = 0; i < 6; i++){	
 				edgeLimit = 7;
 				for(int k = 0; k < 5; k++){
-					for(int j = 1; j < 4; j++){					
+					for(int j = 1; j < 6; j++){					
 						str = matrixGame[i][j].getText();			
 						strNeighbour = matrixGame[i][j-1].getText();			
 						
