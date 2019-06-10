@@ -24,7 +24,7 @@ public class GameMatrix {
 			
 		switch(str){
 			case "2":
-				matrixGame[i][j].setBackground(Color.decode("#ede4fa"));
+				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
 				matrixGame[i][j].setForeground(Color.decode("#776e65"));
 				break;
 			case "4":
@@ -44,11 +44,11 @@ public class GameMatrix {
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "64":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#e95937"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "128":
-				matrixGame[i][j].setBackground(Color.decode("#edcf72"));
+				matrixGame[i][j].setBackground(Color.decode("#E3C762"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "256":
@@ -56,36 +56,34 @@ public class GameMatrix {
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "512":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#f9ca58"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "1024":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#e3ba14"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "2048":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#FAB20A"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
-			case "":
+				
 			case "4096":
-				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
+				matrixGame[i][j].setBackground(Color.decode("#60d994"));
+				matrixGame[i][j].setForeground(Color.white);
+				break;
+			case "8192":
+				matrixGame[i][j].setBackground(Color.decode("#53bb7e"));
 				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "10":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
-				matrixGame[i][j].setForeground(Color.white);
 				break;
 			case "11":
 				matrixGame[i][j].setBackground(Color.decode("#554813"));
-				matrixGame[i][j].setForeground(Color.white);
 				break;
-			case "12":
-				matrixGame[i][j].setBackground(Color.decode("#554813"));
-				break;
-			case "8192":
+			case "": 
 				matrixGame[i][j].setBackground(Color.decode("#eee4da"));
-				matrixGame[i][j].setForeground(Color.white);
 				break;
 			default:
 				break;

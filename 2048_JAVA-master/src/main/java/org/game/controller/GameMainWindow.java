@@ -60,7 +60,6 @@ public class GameMainWindow extends JFrame{
 	
 	public GameMainWindow(int tilenum) throws ParserConfigurationException, SAXException, IOException{
 		super();
-		getContentPane().setBackground(Color.decode("#F0F0F0"));
 		this.t = tilenum; 
 		Ftitle= new Font("Clear Sans",Font.BOLD,90);
 		Fsmall= new Font("Clear Sans",Font.BOLD,15);
@@ -71,25 +70,24 @@ public class GameMainWindow extends JFrame{
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
 	    //2인용일 경우의 타이머,size = 1125,700
 	    //1인용일 경우 size = 500,700
-	    
 	    final JLabel firstTimer = new JLabel();
 		firstTimer.setText(String.valueOf(100));
 		firstTimer.setFont(new Font("", Font.BOLD,80));
-		firstTimer.setForeground(Color.decode("#7E6F94"));
+		firstTimer.setForeground(Color.decode("#776e65"));
 		firstTimer.setBounds(345, 70, 200, 70);
 	
 		
 		final JLabel secondTimer = new JLabel();
 		secondTimer.setText(String.valueOf(100));
 		secondTimer.setFont(new Font("", Font.BOLD,80));
-		secondTimer.setForeground(Color.decode("#7E6F94"));
-		secondTimer.setBounds(965, 70, 200, 70);
+		secondTimer.setForeground(Color.decode("#776e65"));
+		secondTimer.setBounds(965, 80, 200, 70);
 	
 	    if(tilenum==5)
 	    {
 	    	setSize(1135,700);
-	    	getContentPane().add(firstTimer);
-	    	getContentPane().add(secondTimer);
+	    	add(firstTimer);
+	    	add(secondTimer);
 			
 			timer = new Timer(1000, new ActionListener() {
 				
@@ -118,34 +116,27 @@ public class GameMainWindow extends JFrame{
 		JLabel gameTitle = new JLabel();
 		gameTitle.setText("2048");
 		gameTitle.setFont(Ftitle);
-		gameTitle.setForeground(Color.decode("#7E6F94"));
+		gameTitle.setForeground(Color.decode("#776e65"));
 		gameTitle.setBounds(20, 50, 300, 100);
-		getContentPane().add(gameTitle);
-		
-		JLabel gameTitle2 = new JLabel();
-		gameTitle2.setText("2048");
-		gameTitle2.setFont(Ftitle);
-		gameTitle2.setForeground(Color.decode("#7E6F94"));
-		gameTitle2.setBounds(640, 50, 300, 100);
-		getContentPane().add(gameTitle2);
+		add(gameTitle);
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
 		currentScore.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		currentScore.setForeground(Color.decode("#7E6F94"));
+		currentScore.setForeground(Color.decode("#A19191"));
 		currentScore.setFont(Fsmall);
 		currentScore.setBounds(350, 20, 130, 50);
 		currentScore.setEditable(false);
-		getContentPane().add(currentScore);
+		add(currentScore);
 
 		final JTextField currentScore2 = new JTextField(" SCORE :0");
 		currentScore2.setOpaque(true); 
 		currentScore2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		currentScore2.setForeground(Color.decode("#7E6F94"));
+		currentScore2.setForeground(Color.decode("#A19191"));
 		currentScore2.setFont(Fsmall);
 		currentScore2.setBounds(970, 20, 130, 50);
 		currentScore2.setEditable(false);
-		getContentPane().add(currentScore2);
+		add(currentScore2);
 
 		
 		final JLabel bestScore = new JLabel();
@@ -158,23 +149,24 @@ public class GameMainWindow extends JFrame{
 		bestScore.setBounds(350, 20, 130, 50);
 		
 		JButton newGame = new JButton();
-		newGame.setText("New Game");
+		newGame.setText("Back");
 		newGame.setFont(Fsmall);
 		newGame.setBackground(Color.decode("#D6C1CB"));
 		newGame.setBorderPainted(false);
-		newGame.setForeground(Color.decode("#7E6F94"));
+		newGame.setForeground(Color.decode("#f9f6f2"));
 		if(t == 5) {
-			newGame.setBounds(495, 80, 130, 30);
+			newGame.setBounds(500, 80, 130, 30);
 		}else {
 			newGame.setBounds(350, 80, 130, 30);
 		}
-		getContentPane().add(newGame);
-	
+		
+		add(newGame);
+		
 		JLabel copyRight = new JLabel();
 		copyRight.setText("짤 2014 Chuan Dong. Simulation of game 2048 by Java Swing");
 		copyRight.setFont(new Font("", Font.BOLD,10));
 		copyRight.setBounds(20, 630, 150, 50);
-		getContentPane().add(copyRight);
+		add(copyRight);
 		
 		/*
 		 * Panel
@@ -289,8 +281,8 @@ public class GameMainWindow extends JFrame{
 			GameNewCell.CreateNew(matrixGame2,t);
 			break;
 		}
-		getContentPane().add(mainPanel);
-		getContentPane().add(mainPanel2);
+		add(mainPanel);
+		add(mainPanel2);
 		
 		Score = 0;
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
@@ -306,23 +298,14 @@ public class GameMainWindow extends JFrame{
 		    @Override
 		    public void mouseClicked(MouseEvent arg0) 
 		    {
-		    	if(t == 5) {
-		    		timer.stop();
-		    		firstTimer.setText(String.valueOf(100-is));
-		    		secondTimer.setText(String.valueOf(100-js));
-		    		GameInit.startNewGame(matrixGame,t);
-		    		GameInit.startNewGame(matrixGame2,t);
-		    		is = 0;
-		    		js = 0;
-		    	}else {
-		    		GameInit.startNewGame(matrixGame2,t);
-		    	}
+		    	Mainmenu mainmenu=new Mainmenu();
+				mainmenu.setVisible(true);
+				dispose();
 		    }
 		});
 		
 		currentScore.addKeyListener(new KeyAdapter(){				
 			public void keyPressed(KeyEvent e){
-				System.out.println(0);
 				int code = e.getKeyCode();	//Returns the integer keyCode associated with the key in this event
 				if(t == 5) {
 					timer.start();

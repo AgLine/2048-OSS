@@ -20,6 +20,7 @@ public class GameOver {
 				}
 				if(cnt == 9) {
 					JOptionPane.showMessageDialog(null,"게임종료","game over",JOptionPane.ERROR_MESSAGE);
+					
 				}
 			}
 			break;

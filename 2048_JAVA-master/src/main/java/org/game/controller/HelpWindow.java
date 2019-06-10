@@ -4,7 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -47,5 +51,22 @@ public class HelpWindow extends JFrame {
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(12, 180, 450, 461);
 		panel.add(lblNewLabel);
+	
+		JButton backbutton = new JButton(new ImageIcon("b.png"));
+		backbutton.setBorderPainted(false);
+		backbutton.setContentAreaFilled(false);
+		backbutton.setFocusPainted(false);
+		backbutton.setBounds(400, 570, 80, 80);
+		panel.add(backbutton);
+		backbutton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Mainmenu mainmenu=new Mainmenu();
+				mainmenu.setVisible(true);
+				dispose();
+			}
+		
+		});
+		
+	
 	}
 }
