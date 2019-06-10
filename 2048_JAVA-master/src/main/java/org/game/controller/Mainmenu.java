@@ -56,9 +56,6 @@ public class Mainmenu extends JFrame {
 		setContentPane(contentPane);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(173, 216, 230));
-		JLabel backlb = new JLabel("");
-		backlb.setIcon(new ImageIcon("back.PNG"));
 		contentPane.add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		

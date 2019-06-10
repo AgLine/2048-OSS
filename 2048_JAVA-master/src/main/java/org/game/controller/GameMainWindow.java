@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import javax.swing.Timer;
+import javax.swing.UIManager;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,6 +44,9 @@ public class GameMainWindow extends JFrame{
 	private int Score;
 	private JLabel[][] matrixGame;
 	private JLabel[][] matrixGame2;
+	private Font Ftitle;
+	private Font Fsmall;
+	
 	int is = 0, js = 0;//i= 1p 타이머를 위한 변수 j=2p 타이머를 위한 변수
 	static Random random = new Random();
 	int firstItem = random.nextInt(10);
@@ -56,31 +60,36 @@ public class GameMainWindow extends JFrame{
 	
 	public GameMainWindow(int tilenum) throws ParserConfigurationException, SAXException, IOException{
 		super();
+		getContentPane().setBackground(Color.decode("#F0F0F0"));
 		this.t = tilenum; 
+		Ftitle= new Font("Clear Sans",Font.BOLD,90);
+		Fsmall= new Font("Clear Sans",Font.BOLD,15);
 		System.out.println(t);
 		setTitle("Game Java 2048");
 		getContentPane().setLayout(null);
 	    setResizable(false);
 	    setLocationRelativeTo(null); //This line will center the window on the screen.
-	    
 	    //2인용일 경우의 타이머,size = 1125,700
 	    //1인용일 경우 size = 500,700
+	    
 	    final JLabel firstTimer = new JLabel();
 		firstTimer.setText(String.valueOf(100));
-		firstTimer.setFont(new Font("", Font.BOLD,40));
-		firstTimer.setForeground(Color.decode("#776e65"));
-		firstTimer.setBounds(350, 80, 150, 50);
-		add(firstTimer);
+		firstTimer.setFont(new Font("", Font.BOLD,80));
+		firstTimer.setForeground(Color.decode("#7E6F94"));
+		firstTimer.setBounds(345, 70, 200, 70);
+	
 		
 		final JLabel secondTimer = new JLabel();
 		secondTimer.setText(String.valueOf(100));
-		secondTimer.setFont(new Font("", Font.BOLD,40));
-		secondTimer.setForeground(Color.decode("#776e65"));
-		secondTimer.setBounds(950, 80, 150, 50);
-		add(secondTimer);
+		secondTimer.setFont(new Font("", Font.BOLD,80));
+		secondTimer.setForeground(Color.decode("#7E6F94"));
+		secondTimer.setBounds(965, 70, 200, 70);
+	
 	    if(tilenum==5)
 	    {
-	    	setSize(1125,700);
+	    	setSize(1135,700);
+	    	getContentPane().add(firstTimer);
+	    	getContentPane().add(secondTimer);
 			
 			timer = new Timer(1000, new ActionListener() {
 				
@@ -100,7 +109,7 @@ public class GameMainWindow extends JFrame{
 	    }
 	    else
 	    {
-	    	setSize(500,700);
+	    	setSize(520,700);
 	    }
 	    setDefaultCloseOperation(EXIT_ON_CLOSE);//Exit the application using the Systexit method.
 	    /*
@@ -108,34 +117,35 @@ public class GameMainWindow extends JFrame{
 		 */
 		JLabel gameTitle = new JLabel();
 		gameTitle.setText("2048");
-		gameTitle.setFont(new Font("", Font.BOLD,50));
-		gameTitle.setForeground(Color.decode("#776e65"));
-		gameTitle.setBounds(20, 20, 150, 50);
-		add(gameTitle);
+		gameTitle.setFont(Ftitle);
+		gameTitle.setForeground(Color.decode("#7E6F94"));
+		gameTitle.setBounds(20, 50, 300, 100);
+		getContentPane().add(gameTitle);
 		
-		JLabel gameSlogan = new JLabel();
-		gameSlogan.setText("Join the numbers and get to the 2048 tile!");
-		gameSlogan.setFont(new Font("", Font.BOLD,15));
-		gameSlogan.setBounds(20, 70, 320, 50);
-		add(gameSlogan);
+		JLabel gameTitle2 = new JLabel();
+		gameTitle2.setText("2048");
+		gameTitle2.setFont(Ftitle);
+		gameTitle2.setForeground(Color.decode("#7E6F94"));
+		gameTitle2.setBounds(640, 50, 300, 100);
+		getContentPane().add(gameTitle2);
 		
 		final JTextField currentScore = new JTextField(" SCORE :0");
 		currentScore.setOpaque(true); 
-		currentScore.setBackground(Color.decode("#bbada0"));
-		currentScore.setForeground(Color.WHITE);
-		currentScore.setFont(new Font("", Font.BOLD,15));
-		currentScore.setBounds(200, 20, 130, 50);
+		currentScore.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		currentScore.setForeground(Color.decode("#7E6F94"));
+		currentScore.setFont(Fsmall);
+		currentScore.setBounds(350, 20, 130, 50);
 		currentScore.setEditable(false);
-		add(currentScore);
+		getContentPane().add(currentScore);
 
 		final JTextField currentScore2 = new JTextField(" SCORE :0");
 		currentScore2.setOpaque(true); 
-		currentScore2.setBackground(Color.decode("#bbada0"));
-		currentScore2.setForeground(Color.WHITE);
-		currentScore2.setFont(new Font("", Font.BOLD,15));
-		currentScore2.setBounds(820, 20, 130, 50);
+		currentScore2.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		currentScore2.setForeground(Color.decode("#7E6F94"));
+		currentScore2.setFont(Fsmall);
+		currentScore2.setBounds(970, 20, 130, 50);
 		currentScore2.setEditable(false);
-		add(currentScore2);
+		getContentPane().add(currentScore2);
 
 		
 		final JLabel bestScore = new JLabel();
@@ -146,25 +156,25 @@ public class GameMainWindow extends JFrame{
 		bestScore.setForeground(Color.WHITE);
 		bestScore.setFont(new Font("", Font.BOLD,15));
 		bestScore.setBounds(350, 20, 130, 50);
-		add(bestScore);
 		
 		JButton newGame = new JButton();
 		newGame.setText("New Game");
-		newGame.setFont(new Font("", Font.BOLD,15));
-		newGame.setBackground(Color.decode("#8f7a66"));
-		newGame.setForeground(Color.decode("#f9f6f2"));
+		newGame.setFont(Fsmall);
+		newGame.setBackground(Color.decode("#D6C1CB"));
+		newGame.setBorderPainted(false);
+		newGame.setForeground(Color.decode("#7E6F94"));
 		if(t == 5) {
-			newGame.setBounds(500, 80, 130, 30);
+			newGame.setBounds(495, 80, 130, 30);
 		}else {
 			newGame.setBounds(350, 80, 130, 30);
 		}
-		add(newGame);
+		getContentPane().add(newGame);
 	
 		JLabel copyRight = new JLabel();
 		copyRight.setText("짤 2014 Chuan Dong. Simulation of game 2048 by Java Swing");
 		copyRight.setFont(new Font("", Font.BOLD,10));
 		copyRight.setBounds(20, 630, 150, 50);
-		add(copyRight);
+		getContentPane().add(copyRight);
 		
 		/*
 		 * Panel
@@ -279,8 +289,8 @@ public class GameMainWindow extends JFrame{
 			GameNewCell.CreateNew(matrixGame2,t);
 			break;
 		}
-		add(mainPanel);
-		add(mainPanel2);
+		getContentPane().add(mainPanel);
+		getContentPane().add(mainPanel2);
 		
 		Score = 0;
 		bestScore.setText(" BEST : " + String.valueOf(GameScore.getScoreXML().getScore()));
