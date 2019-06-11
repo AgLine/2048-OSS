@@ -336,7 +336,9 @@ public class GameMainWindow extends JFrame{
 						GameOver.over(matrixGame2,t);
 					}else {
 						currentScore.setText(" SCORE : " + String.valueOf(Score));
-						GameOver.over(matrixGame2,t);
+						if(GameOver.over(matrixGame2, t)) {
+							dispose();
+						}
 					}
 					break;
 				case KeyEvent.VK_A:		    
@@ -365,7 +367,9 @@ public class GameMainWindow extends JFrame{
 						GameOver.over(matrixGame2,t);
 					}else {
 						currentScore.setText(" SCORE : " + String.valueOf(Score));
-						GameOver.over(matrixGame2,t);
+						if(GameOver.over(matrixGame2, t)) {
+							dispose();
+						}
 					}
 					break;
 				case KeyEvent.VK_D:
@@ -394,7 +398,9 @@ public class GameMainWindow extends JFrame{
 						GameOver.over(matrixGame2,t);
 					}else {
 						currentScore.setText(" SCORE : " + String.valueOf(Score));
-						GameOver.over(matrixGame2,t);
+						if(GameOver.over(matrixGame2, t)) {
+							dispose();
+						}
 					}
 					break;
 				case KeyEvent.VK_W:
@@ -423,7 +429,9 @@ public class GameMainWindow extends JFrame{
 						GameOver.over(matrixGame2,t);
 					}else {
 						currentScore.setText(" SCORE : " + String.valueOf(Score));
-						GameOver.over(matrixGame2,t);
+						if(GameOver.over(matrixGame2, t)) {
+							dispose();
+						}
 					}
 					break;
 				case KeyEvent.VK_S:
