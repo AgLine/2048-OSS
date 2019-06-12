@@ -2,17 +2,12 @@ package org.game.controller;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
-
-import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -39,7 +34,7 @@ public class TileSelect extends JFrame {
 		panel.setLayout(null);
 		
 		
-		JButton three = new JButton(new ImageIcon("3.png"));
+		JButton three = new JButton(new ImageIcon("image/3.png"));
 		three.setBorderPainted(false);
 		three.setContentAreaFilled(false);
 		three.setFocusPainted(false);
@@ -59,7 +54,7 @@ public class TileSelect extends JFrame {
 		);
 		
 		
-		JButton four = new JButton(new ImageIcon("4.png"));
+		JButton four = new JButton(new ImageIcon("image/4.png"));
 		four.setBorderPainted(false);
 		four.setContentAreaFilled(false);
 		four.setFocusPainted(false);
@@ -78,7 +73,7 @@ public class TileSelect extends JFrame {
 			}
 		});
 		
-		JButton five = new JButton(new ImageIcon("5.png"));
+		JButton five = new JButton(new ImageIcon("image/5.png"));
 		five.setBorderPainted(false);
 		five.setContentAreaFilled(false);
 		five.setFocusPainted(false);
@@ -97,7 +92,7 @@ public class TileSelect extends JFrame {
 		}
 	});
 		
-		JButton six = new JButton(new ImageIcon("6.png"));
+		JButton six = new JButton(new ImageIcon("image/6.png"));
 		six.setBorderPainted(false);
 		six.setContentAreaFilled(false);
 		six.setFocusPainted(false);
@@ -116,7 +111,7 @@ public class TileSelect extends JFrame {
 		}
 	});
 		
-		JButton backbutton = new JButton(new ImageIcon("b.png"));
+		JButton backbutton = new JButton(new ImageIcon("image/b.png"));
 		backbutton.setBorderPainted(false);
 		backbutton.setContentAreaFilled(false);
 		backbutton.setFocusPainted(false);
@@ -124,7 +119,7 @@ public class TileSelect extends JFrame {
 		panel.add(backbutton);
 		backbutton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Mainmenu mainmenu=new Mainmenu();
+				MainMenu mainmenu=new MainMenu();
 				mainmenu.setVisible(true);
 				dispose();
 			}
@@ -133,7 +128,7 @@ public class TileSelect extends JFrame {
 		
 		
 		
-		JLabel backg = new JLabel(new ImageIcon("tback.png"));
+		JLabel backg = new JLabel(new ImageIcon("image/tback.png"));
 		backg.setBounds(0, -30, 500, 700);
 		panel.add(backg);	
 	}

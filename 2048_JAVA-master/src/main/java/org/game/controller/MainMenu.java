@@ -4,36 +4,27 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import org.xml.sax.SAXException;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
-import java.awt.Font;
 
-public class Mainmenu extends JFrame {
+public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				Mainmenu ex=null;
+				MainMenu ex=null;
 				try {
-						ex=new Mainmenu();
+						ex=new MainMenu();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -41,11 +32,8 @@ public class Mainmenu extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Mainmenu() {
+	
+	public MainMenu() {
 		setTitle("2048");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 700);
@@ -60,7 +48,7 @@ public class Mainmenu extends JFrame {
 		panel.setLayout(null);
 		
 		
-		JButton btnOnePlayer = new JButton(new ImageIcon("One player.png"));
+		JButton btnOnePlayer = new JButton(new ImageIcon("image/One player.png"));
 		btnOnePlayer.setBorderPainted(false);
 		btnOnePlayer.setContentAreaFilled(false);
 		btnOnePlayer.setFocusPainted(false);
@@ -76,7 +64,7 @@ public class Mainmenu extends JFrame {
 		);
 		
 		
-		JButton btnTwoPlayer = new JButton(new ImageIcon("Two Player.png"));
+		JButton btnTwoPlayer = new JButton(new ImageIcon("image/Two Player.png"));
 		btnTwoPlayer.setBorderPainted(false);
 		btnTwoPlayer.setContentAreaFilled(false);
 		btnTwoPlayer.setFocusPainted(false);
@@ -95,7 +83,7 @@ public class Mainmenu extends JFrame {
 			}
 		});
 		
-		JButton btnHelp = new JButton(new ImageIcon("Help.png"));
+		JButton btnHelp = new JButton(new ImageIcon("image/Help.png"));
 		btnHelp.setBorderPainted(false);
 		btnHelp.setContentAreaFilled(false);
 		btnHelp.setFocusPainted(false);
@@ -109,7 +97,7 @@ public class Mainmenu extends JFrame {
 		}
 	});
 		
-		JButton Close = new JButton(new ImageIcon("Close.png"));
+		JButton Close = new JButton(new ImageIcon("image/Close.png"));
 		Close.setBorderPainted(false);
 		Close.setContentAreaFilled(false);
 		Close.setFocusPainted(false);
@@ -122,7 +110,7 @@ public class Mainmenu extends JFrame {
 	});
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("mainbg.png"));
+		lblNewLabel.setIcon(new ImageIcon("image/mainbg.png"));
 		lblNewLabel.setBounds(0, -30, 500, 700);
 		panel.add(lblNewLabel);
 	}

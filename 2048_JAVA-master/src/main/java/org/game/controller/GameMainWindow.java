@@ -1,7 +1,6 @@
 package org.game.controller;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.util.Random;
 
 import javax.swing.Timer;
-import javax.swing.UIManager;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,7 +28,6 @@ import org.game.model.BestScore;
 import org.game.view.GameScore;
 import org.game.view.GameNewCell;
 import org.game.view.GameKeyEvent;
-import org.game.view.GameInit;
 import org.game.view.GameMatrix;
 import org.game.view.GameOver;
 import org.xml.sax.SAXException;
@@ -304,7 +301,7 @@ public class GameMainWindow extends JFrame{
 		    @Override
 		    public void mouseClicked(MouseEvent m) 
 		    {
-		    	Mainmenu Mainmenu = new Mainmenu();
+		    	MainMenu Mainmenu = new MainMenu();
 				Mainmenu.setVisible(true);
 				dispose();
 		    	if(t==5) {

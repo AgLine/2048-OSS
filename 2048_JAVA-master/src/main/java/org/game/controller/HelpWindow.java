@@ -2,7 +2,6 @@ package org.game.controller;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,10 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextPane;
-import javax.swing.JTextArea;
-import javax.swing.UIManager;
 
 public class HelpWindow extends JFrame {
 
@@ -45,7 +40,7 @@ public class HelpWindow extends JFrame {
 		//		lblNewLabel.setBounds(12, 180, 450, 461);
 		//		panel.add(lblNewLabel);
 			
-				JButton backbutton = new JButton(new ImageIcon("b.png"));
+				JButton backbutton = new JButton(new ImageIcon("image/b.png"));
 				backbutton.setBorderPainted(false);
 				backbutton.setContentAreaFilled(false);
 				backbutton.setFocusPainted(false);
@@ -53,7 +48,7 @@ public class HelpWindow extends JFrame {
 				panel.add(backbutton);
 				backbutton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						Mainmenu mainmenu=new Mainmenu();
+						MainMenu mainmenu=new MainMenu();
 						mainmenu.setVisible(true);
 						dispose();
 					}
@@ -88,7 +83,7 @@ public class HelpWindow extends JFrame {
 		itemtitle.setBounds(20,340,150,40);
 		panel.add(itemtitle);
 		
-		JLabel tpic=new JLabel(new ImageIcon("30.png"));
+		JLabel tpic=new JLabel(new ImageIcon("image/30.png"));
 		tpic.setBounds(20,380,100,100);
 		panel.add(tpic);
 		
@@ -97,7 +92,7 @@ public class HelpWindow extends JFrame {
 		thelp.setBounds(140,395,400,50);
 		panel.add(thelp);
 		
-		JLabel ttpic=new JLabel(new ImageIcon("10.png"));
+		JLabel ttpic=new JLabel(new ImageIcon("image/10.png"));
 		ttpic.setBounds(20,500,100,100);
 		panel.add(ttpic);
 		
@@ -106,7 +101,7 @@ public class HelpWindow extends JFrame {
 		tthelp.setBounds(140,515,400,50);
 		panel.add(tthelp);
 		
-		JLabel backg = new JLabel(new ImageIcon("tback.png"));
+		JLabel backg = new JLabel(new ImageIcon("image/tback.png"));
 		backg.setBounds(-22, -56, 500, 700);
 		panel.add(backg);
 		

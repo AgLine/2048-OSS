@@ -2,7 +2,7 @@ package org.game.view;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import org.game.controller.Mainmenu;
+import org.game.controller.MainMenu;
 
 public class GameOver {
 		
@@ -19,7 +19,7 @@ public class GameOver {
 					if(str.equals("2048")) {
 						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
 						if(result == JOptionPane.NO_OPTION) {
-							Mainmenu Mainmenu = new Mainmenu();
+							MainMenu Mainmenu = new MainMenu();
 							Mainmenu.setVisible(true);
 							return true;
 						}
@@ -42,7 +42,7 @@ public class GameOver {
 					if(str.equals("2048")) {
 						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
 						if(result == JOptionPane.NO_OPTION) {
-							Mainmenu Mainmenu = new Mainmenu();
+							MainMenu Mainmenu = new MainMenu();
 							Mainmenu.setVisible(true);
 							return true;
 						}
@@ -63,7 +63,7 @@ public class GameOver {
 					if(str.equals("2048")) {
 						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
 						if(result == JOptionPane.NO_OPTION) {
-							Mainmenu Mainmenu = new Mainmenu();
+							MainMenu Mainmenu = new MainMenu();
 							Mainmenu.setVisible(true);
 							return true;
 						}
@@ -84,7 +84,7 @@ public class GameOver {
 					if(str.equals("2048")) {
 						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
 						if(result == JOptionPane.NO_OPTION) {
-							Mainmenu Mainmenu = new Mainmenu();
+							MainMenu Mainmenu = new MainMenu();
 							Mainmenu.setVisible(true);
 							return true;
 						}
