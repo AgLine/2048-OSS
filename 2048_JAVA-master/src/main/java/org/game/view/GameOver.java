@@ -2,9 +2,11 @@ package org.game.view;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
+import org.game.controller.Mainmenu;
+
 public class GameOver {
 		
-	public static void over(JLabel[][] matrixGame, int tilenum) {
+	public static boolean over(JLabel[][] matrixGame, int tilenum) {
 
 		String str;
 		int i,j;
@@ -14,6 +16,14 @@ public class GameOver {
 			for(i=0;i<3;i++) {
 				for(j=0;j<3;j++) {
 					str = matrixGame[i][j].getText();
+					if(str.equals("2048")) {
+						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
+						if(result == JOptionPane.NO_OPTION) {
+							Mainmenu Mainmenu = new Mainmenu();
+							Mainmenu.setVisible(true);
+							return true;
+						}
+					}
 					if(!str.equals("")) {
 						cnt++;
 					}								
@@ -29,6 +39,14 @@ public class GameOver {
 			for(i=0;i<4;i++) {
 				for(j=0;j<4;j++) {
 					str = matrixGame[i][j].getText();
+					if(str.equals("2048")) {
+						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
+						if(result == JOptionPane.NO_OPTION) {
+							Mainmenu Mainmenu = new Mainmenu();
+							Mainmenu.setVisible(true);
+							return true;
+						}
+					}
 					if(!str.equals("")) {
 						cnt++;
 					}								
@@ -42,6 +60,14 @@ public class GameOver {
 			for(i=0;i<5;i++) {
 				for(j=0;j<5;j++) {
 					str = matrixGame[i][j].getText();
+					if(str.equals("2048")) {
+						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
+						if(result == JOptionPane.NO_OPTION) {
+							Mainmenu Mainmenu = new Mainmenu();
+							Mainmenu.setVisible(true);
+							return true;
+						}
+					}
 					if(!str.equals("")) {
 						cnt++;
 					}								
@@ -55,6 +81,14 @@ public class GameOver {
 			for(i=0;i<6;i++) {
 				for(j=0;j<6;j++) {
 					str = matrixGame[i][j].getText();
+					if(str.equals("2048")) {
+						int result = JOptionPane.showConfirmDialog(null,"CONTINUED",null, JOptionPane.YES_NO_OPTION);
+						if(result == JOptionPane.NO_OPTION) {
+							Mainmenu Mainmenu = new Mainmenu();
+							Mainmenu.setVisible(true);
+							return true;
+						}
+					}
 					if(!str.equals("")) {
 						cnt++;
 					}								
@@ -65,6 +99,7 @@ public class GameOver {
 			}
 			break;
 		}
+		return false;
 	}
 	
 	public static void firstWin(){
