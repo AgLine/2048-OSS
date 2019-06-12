@@ -134,7 +134,6 @@ public class TileSelect extends JFrame {
 		
 		
 		JLabel backg = new JLabel(new ImageIcon("tback.png"));
-//		backg.setIcon(new ImageIcon("mainbg.png"));
 		backg.setBounds(0, -30, 500, 700);
 		panel.add(backg);	
 	}
