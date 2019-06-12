@@ -1,0 +1,40 @@
+2019-06-12 22:48:05,931 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2019-06-12 22:49:13,177 [Worker-9: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2019-06-12 22:49:14,050 [Worker-9: Update Maven projects configuration] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 2048_JAVA:2048_JAVA:0.0.1-SNAPSHOT @ D:\2048\2048-OSS-master\2048_JAVA-master\pom.xml.
+2019-06-12 22:49:14,800 [Worker-9: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /2048-OSS-master_2048_JAVA-master/src/main/java
+2019-06-12 22:49:14,801 [Worker-9: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /2048-OSS-master_2048_JAVA-master/src/main/resources
+2019-06-12 22:49:14,805 [Worker-9: Update Maven projects configuration] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /2048-OSS-master_2048_JAVA-master/src/test/java
+2019-06-12 22:49:16,226 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 2048_JAVA:2048_JAVA:0.0.1-SNAPSHOT @ D:\2048\2048-OSS-master\2048_JAVA-master\pom.xml.
+2019-06-12 22:49:16,233 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:16,238 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 22:49:16,246 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:16,247 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 22:49:16,616 [Worker-9: Update Maven projects configuration] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 3 sec
+2019-06-12 22:49:17,858 [Worker-8: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:17,865 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 22:49:17,868 [Worker-8: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:17,869 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 22:49:25,826 [Worker-8: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:25,827 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2019-06-12 22:49:25,828 [Worker-8: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 22:49:25,828 [Worker-8: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 23:08:30,655 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:08:30,656 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 23:08:30,658 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:08:30,659 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 23:08:59,802 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:08:59,804 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 23:08:59,805 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:08:59,806 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 23:09:29,391 [Worker-4: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:09:29,393 [Worker-4: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 23:09:29,394 [Worker-4: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:09:29,395 [Worker-4: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 23:10:18,434 [Worker-4: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:10:18,435 [Worker-4: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 23:10:18,438 [Worker-4: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:10:18,438 [Worker-4: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
+2019-06-12 23:18:13,153 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:18:13,154 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2019-06-12 23:18:13,157 [Worker-17: Launching MainMenu] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2019-06-12 23:18:13,158 [Worker-17: Launching MainMenu] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\2048\2048-OSS-master\2048_JAVA-master\src\test\resources
