@@ -2,8 +2,8 @@
 ---
 ## 📌 프로젝트 개요
 - **기간**: 2019.04 ~ 2019.06  
-- **개발 환경**: Eclipse  
-- **사용 기술**: Java, XML, MVC Pattern  
+- **개발 환경**: `Eclipse`  
+- **사용 기술**: `Java`, `XML`, `MVC Pattern`  
 
 ---
 ## 🎯 프로젝트 목적
