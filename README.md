@@ -20,7 +20,7 @@
 
 ### 👥 팀 구성 및 역할 분담
 - **본인**: 2인용모드 구현, 오픈소스 코드 분석 
-- **팀원**: 새로운 게임 모드 추가 (5*5, 6*6 보드)
+- **팀원**: 새로운 게임 모드 추가 (5X5, 6X6 보드)
 - **팀원**: UI 및 레이아웃 조정
 
 ---
@@ -37,7 +37,18 @@
 
 ### 3. 아이템 효과
 - **10 합성** → 자신의 타이머 +10초  
-- **30 합성** → 상대 타이머 -30초  
+- **30 합성** → 상대 타이머 -30초
+  
+---
+## 📖 배운 점 & 느낀 점
+- 문자열 비교 시 `equals()`는 **boolean**을 반환하고, `compareTo()`는 **int**를 반환한다는 차이를 명확히 이해하게 되었습니다.  
+- C 언어에서는 `if(1)`과 같은 표현이 가능하지만, Java에서는 허용되지 않아 `if` 조건문에 `compareTo()`를 직접 사용했을 때 의도한 대로 동작하지 않는 오류가 발생했습니다.  
+- 당시 C 언어를 사용하는것에 더 익숙했기 때문에 문제 해결에 많은 시간이 걸렸지만, 이 과정을 통해 **언어 간 차이에 대한 이해**와 **문제 해결 과정의 중요성**을 배웠습니다.
 
 ---
 ## 📷 실행 화면
+<img width="614" height="434" alt="image" src="https://github.com/user-attachments/assets/d68b6a79-d394-42ab-b771-d3bf5de23806" />
+<img width="600" height="373" alt="image" src="https://github.com/user-attachments/assets/f867c5fd-531b-4bd9-8a44-9e30c5a46b26" />
+<img width="599" height="373" alt="image" src="https://github.com/user-attachments/assets/8fa18411-cb5c-4a12-aecd-2d4788e59205" />
+<img width="600" height="372" alt="image" src="https://github.com/user-attachments/assets/30682fb9-3932-430e-856a-7edfd339521a" />
+<img width="598" height="370" alt="image" src="https://github.com/user-attachments/assets/7e365740-5dd7-4bb6-aebf-cfd1255ef5b7" />
