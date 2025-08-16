@@ -40,6 +40,39 @@
 - **30 합성** → 상대 타이머 -30초
   
 ---
+## 시스템 구조
+```mermaid
+flowchart TD
+    A([start]) --> B{버튼 클릭}
+
+    B --> C[one player]
+    B --> D[two player]
+    B --> E[help]
+    B --> F[close]
+
+    %% One player branch
+    C --> C1{버튼 클릭}
+    C1 --> G[back]
+    C1 --> H[3x3]
+    C1 --> I[4x4]
+    C1 --> J[5x5]
+    C1 --> K[6x6]
+    G --> B
+
+    %% Two player branch
+    D --> D1{버튼 클릭}
+    D1 --> L[back]
+    L --> B
+
+    %% Help branch
+    E --> E1{버튼 클릭}
+    E1 --> M[back]
+    M --> B
+
+    %% Close branch
+    F --> N([end])
+```
+---
 ## 📖 배운 점 & 느낀 점
 - 문자열 비교 시 `equals()`는 **boolean**을 반환하고, `compareTo()`는 **int**를 반환한다는 차이를 명확히 이해하게 되었습니다.  
 - C 언어에서는 `if(1)`과 같은 표현이 가능하지만, Java에서는 허용되지 않아 `if` 조건문에 `compareTo()`를 직접 사용했을 때 의도한 대로 동작하지 않는 오류가 발생했습니다.  
